@@ -1,10 +1,11 @@
 {
-    "name": "sylius/plugin-skeleton",
+    "name": "bitbag/banner-plugin",
     "type": "sylius-plugin",
-    "description": "Acme example plugin for Sylius.",
+    "description": "Banner plugin for sylius",
     "keywords": [
         "sylius",
-        "sylius-plugin"
+        "sylius-plugin",
+        "sylius-banner"
     ],
     "license": "MIT",
     "require": {
@@ -52,14 +53,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Acme\\SyliusExamplePlugin\\": "src/",
-            "Tests\\Acme\\SyliusExamplePlugin\\": "tests/"
+            "BitBag\\SyliusBannerPlugin\\": "src/",
+            "Tests\\BitBag\\SyliusBannerPlugin\\": "tests/"
         }
     },
     "autoload-dev": {
-        "classmap": [
-            "tests/Application/Kernel.php"
-        ]
+        "classmap": ["tests/Application/Kernel.php"]
     },
     "scripts": {
         "post-install-cmd": [

@@ -1,0 +1,20 @@
+{
+  "entrypoints": {
+    "bitbag-syliusBannerPlugin-shop": {
+      "css": [
+        "/public/bitbag-syliusBannerPlugin-shop.css"
+      ],
+      "js": [
+        "/public/bitbag-syliusBannerPlugin-shop.js"
+      ]
+    },
+    "bitbag-syliusBannerPlugin-admin": {
+      "css": [
+        "/public/bitbag-syliusBannerPlugin-admin.css"
+      ],
+      "js": [
+        "/public/bitbag-syliusBannerPlugin-admin.js"
+      ]
+    }
+  }
+}

@@ -34,16 +34,16 @@
         "phpstan/phpstan-strict-rules": "^1.0",
         "phpstan/phpstan-webmozart-assert": "^1.0",
         "phpunit/phpunit": "^9.5",
+        "polishsymfonycommunity/symfony-mocker-container": "^1.0",
         "sensiolabs/security-checker": "^6.0",
         "sylius-labs/coding-standard": "^4.0",
         "symfony/browser-kit": "^4.4 || ^5.2",
         "symfony/debug-bundle": "^4.4 || ^5.2",
         "symfony/dotenv": "^4.4 || ^5.2",
         "symfony/intl": "^4.4 || ^5.2",
-        "symfony/webpack-encore-bundle": "^1.14",
         "symfony/web-profiler-bundle": "^4.4 || ^5.2",
-        "vimeo/psalm": "4.22.0",
-        "polishsymfonycommunity/symfony-mocker-container": "^1.0"
+        "symfony/webpack-encore-bundle": "^1.14",
+        "vimeo/psalm": "4.22.0"
     },
     "config": {
         "sort-packages": true

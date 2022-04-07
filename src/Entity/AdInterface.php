@@ -12,8 +12,10 @@ declare(strict_types=1);
 namespace BitBag\SyliusBannerPlugin\Entity;
 
 use Doctrine\Common\Collections\Collection;
+use Sylius\Component\Resource\Model\ResourceInterface;
+use Sylius\Component\Resource\Model\ToggleableInterface;
 
-interface AdInterface
+interface AdInterface extends  ResourceInterface, ToggleableInterface
 {
     public function getName(): ?string;
 

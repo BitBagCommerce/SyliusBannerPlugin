@@ -1,0 +1,7 @@
+sylius_resource:
+    resources:
+        bitbag_sylius_banner_plugin.section:
+            driver: doctrine/orm
+            classes:
+                model: BitBag\SyliusBannerPlugin\Entity\Section
+                interface: BitBag\SyliusBannerPlugin\Entity\SectionInterface

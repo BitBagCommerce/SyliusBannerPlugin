@@ -13,3 +13,4 @@
 /phpunit.xml
 
 /public/build
+/tests/Application/public/build

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                  http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd"
+>
+    <mapped-superclass name="BitBag\SyliusBannerPlugin\Entity\Ad" table="bitbag_banners_ad">
+        <id name="id" column="id" type="integer">
+            <generator strategy="AUTO"/>
+        </id>
+        <field name="name" column="name" unique="true"/>
+        <field name="enabled" column="enabled" type="boolean"/>
+        <field name="startAt" column="startAt" type="datetime"/>
+        <field name="endAt" column="endAt" type="datetime"/>
+        <field name="priority" column="priority" type="integer"/>
+
+        <many-to-many field="banners" inversed-by="ads" target-entity="BitBag\SyliusBannerPlugin\Entity\Banner">
+            <join-table name="bitbag_banners_ads">
+                <join-columns>
+                    <join-column name="ad_id"/>
+                </join-columns>
+                <inverse-join-columns>
+                    <join-column name="banner_id" />
+                </inverse-join-columns>
+            </join-table>
+        </many-to-many>
+
+    </mapped-superclass>
+</doctrine-mapping>

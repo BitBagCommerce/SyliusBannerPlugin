@@ -1,0 +1,39 @@
+sylius_grid:
+    grids:
+        bitbag_sylius_banner_plugin_section:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: BitBag\SyliusBannerPlugin\Entity\Section
+            sorting:
+                id: desc
+            fields:
+                id:
+                    type: string
+                    label: sylius.ui.id
+                    sortable: ~
+                name:
+                    type: string
+                    label: sylius.ui.name
+                    sortable: ~
+                code:
+                    type: string
+                    label: sylius.ui.code
+                    sortable: ~
+                width:
+                    type: string
+                    label: sylius.ui.width
+                    sortable: ~
+                height:
+                    type: string
+                    label: sylius.ui.height
+                    sortable: ~
+            actions:
+                main:
+                    create:
+                        type: create
+                item:
+                    update:
+                        type: update
+                    delete:
+                        type: delete

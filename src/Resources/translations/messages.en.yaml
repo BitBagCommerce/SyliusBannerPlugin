@@ -1,0 +1,12 @@
+bitbag_sylius_banner_plugin:
+    ui:
+        ad: 'Ad'
+        ads: 'Ads'
+        banner: 'Banner'
+        banners: 'Banners'
+        new_ad: 'New Ad'
+        new_banner: 'New Banner'
+        new_section: 'New Section'
+        path: 'path'
+        section: 'Section'
+        sections: 'Sections'

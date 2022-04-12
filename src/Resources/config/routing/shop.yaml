@@ -1,0 +1,2 @@
+bitbag_sylius_banner_plugin_banners:
+    resource: "@BitBagSyliusBannerPlugin/Resources/config/routing/shop/*.yaml"

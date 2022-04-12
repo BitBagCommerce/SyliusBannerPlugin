@@ -1,0 +1,15 @@
+bitbag_sylius_banner_plugin_section:
+    resource: |
+        alias: bitbag_sylius_banner_plugin.section
+        section: admin
+        path: /banner/section
+        permission: true
+        templates: "@SyliusAdmin\\Crud"
+        redirect: update
+        grid: bitbag_sylius_banner_plugin_section
+        vars:
+            all:
+                subheader: bitbag_sylius_banner_plugin.ui.secction
+            index:
+                icon: 'tags'
+    type: sylius.resource

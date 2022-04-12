@@ -1,0 +1,6 @@
+bitbag_sylius_banner_plugin_banners_ad:
+  resource: "@BitBagSyliusBannerPlugin/Resources/config/routing/admin/ad.yaml"
+bitbag_sylius_banner_plugin_banners_banner:
+  resource: "@BitBagSyliusBannerPlugin/Resources/config/routing/admin/banner.yaml"
+bitbag_sylius_banner_plugin_banners_section:
+  resource: "@BitBagSyliusBannerPlugin/Resources/config/routing/admin/section.yaml"

@@ -3,5 +3,5 @@ webpack_encore:
     builds:
         shop: '%kernel.project_dir%/public/build/shop'
         admin: '%kernel.project_dir%/public/build/admin'
-        skeleton_shop: '%kernel.project_dir%/public/build/bitbag/syliusBannerPlugin/shop'
-        skeleton_admin: '%kernel.project_dir%/public/build/bitbag/syliusBannerPlugin/admin'
+        banner_plugin_shop: '%kernel.project_dir%/public/build/bitbag/syliusBannerPlugin/shop'
+        banner_plugin_admin: '%kernel.project_dir%/public/build/bitbag/syliusBannerPlugin/admin'

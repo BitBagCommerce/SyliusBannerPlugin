@@ -4,14 +4,10 @@ sylius_grid:
             driver:
                 name: doctrine/orm
                 options:
-                    class: BitBag\SyliusBannerPlugin\Entity\Ad
+                    class: "%bitbag_sylius_banner_plugin.model.ad.class%"
             sorting:
                 endAt: desc
             fields:
-                id:
-                    type: string
-                    label: sylius.ui.id
-                    sortable: ~
                 name:
                     type: string
                     label: sylius.ui.name

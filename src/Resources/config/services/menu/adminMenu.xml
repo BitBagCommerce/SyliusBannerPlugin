@@ -6,8 +6,13 @@
            http://symfony.com/schema/dic/services/services-1.0.xsd"
 >
     <services>
-        <service id="bitbag_sylius_banner_plugin.menu.admin_menu_listener" class="BitBag\SyliusBannerPlugin\Menu\AdminMenuListener">
-            <tag name="kernel.event_listener" event="sylius.menu.admin.main" method="buildMenu" />
+        <service id="bitbag_sylius_banner_plugin.menu.admin_menu_listener"
+                 class="BitBag\SyliusBannerPlugin\Menu\AdminMenuListener"
+        >
+            <tag name="kernel.event_listener"
+                 event="sylius.menu.admin.main"
+                 method="buildMenu"
+            />
         </service>
     </services>
 </container>

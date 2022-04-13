@@ -1,6 +1,47 @@
-bitbag_sylius_banner_plugin_banners_ad:
-  resource: "@BitBagSyliusBannerPlugin/Resources/config/routing/admin/ad.yaml"
-bitbag_sylius_banner_plugin_banners_banner:
-  resource: "@BitBagSyliusBannerPlugin/Resources/config/routing/admin/banner.yaml"
-bitbag_sylius_banner_plugin_banners_section:
-  resource: "@BitBagSyliusBannerPlugin/Resources/config/routing/admin/section.yaml"
+bitbag_sylius_banner_plugin_ad:
+  resource: |
+    alias: bitbag_sylius_banner_plugin.ad
+    section: admin
+    path: /banner/ad
+    permission: true
+    templates: "@SyliusAdmin\\Crud"
+    redirect: update
+    grid: bitbag_sylius_banner_plugin_ad
+    vars:
+        all:
+            subheader: bitbag_sylius_banner_plugin.ui.ad
+        index:
+            icon: 'tags'
+  type: sylius.resource
+
+bitbag_sylius_banner_plugin_banner:
+  resource: |
+    alias: bitbag_sylius_banner_plugin.banner
+    section: admin
+    path: /banner/banner
+    permission: true
+    templates: "@SyliusAdmin\\Crud"
+    redirect: update
+    grid: bitbag_sylius_banner_plugin_banner
+    vars:
+        all:
+            subheader: bitbag_sylius_banner_plugin.ui.banner
+        index:
+            icon: 'tags'
+  type: sylius.resource
+
+bitbag_sylius_banner_plugin_section:
+  resource: |
+    alias: bitbag_sylius_banner_plugin.section
+    section: admin
+    path: /banner/section
+    permission: true
+    templates: "@SyliusAdmin\\Crud"
+    redirect: update
+    grid: bitbag_sylius_banner_plugin_section
+    vars:
+        all:
+            subheader: bitbag_sylius_banner_plugin.ui.secction
+        index:
+            icon: 'tags'
+  type: sylius.resource

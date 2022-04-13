@@ -10,9 +10,18 @@
                  class="BitBag\SyliusBannerPlugin\EventListener\BannerListener"
         >
             <argument id="bit_bag.sylius_banner_plugin.uploader.banner_uploader" type="service"/>
-            <tag name="kernel.event_listener" event="bitbag_sylius_banner_plugin.banner.pre_create" method="uploadBanner" />
-            <tag name="kernel.event_listener" event="bitbag_sylius_banner_plugin.banner.pre_update" method="uploadBanner" />
-            <tag name="kernel.event_listener" event="bitbag_sylius_banner_plugin.banner.pre_delete" method="removeBanner" />
+            <tag name="kernel.event_listener"
+                 event="bitbag_sylius_banner_plugin.banner.pre_create"
+                 method="uploadBanner"
+            />
+            <tag name="kernel.event_listener"
+                 event="bitbag_sylius_banner_plugin.banner.pre_update"
+                 method="uploadBanner"
+            />
+            <tag name="kernel.event_listener"
+                 event="bitbag_sylius_banner_plugin.banner.pre_delete"
+                 method="removeBanner"
+            />
         </service>
     </services>
 </container>

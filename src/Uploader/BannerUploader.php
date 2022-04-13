@@ -33,6 +33,7 @@ final class BannerUploader implements BannerUploaderInterface
         if (!$banner->hasFile()) {
             return;
         }
+
         $file = $banner->getFile();
         Assert::notNull($file, 'File for banner is null');
 
@@ -43,19 +44,18 @@ final class BannerUploader implements BannerUploaderInterface
         do {
             $hash = bin2hex(random_bytes(16));
             $path = $this->expandPath(
-                sprintf('%s.%s', $hash, $file->guessExtension()),
+                sprintf('/%s.%s', $hash, $file->guessExtension()),
                 self::PATH_PREFIX
             );
         } while ($this->filesystem->has($path));
 
-        $mediaPath = '/' . $path;
-        $banner->setPath($mediaPath);
+        $banner->setPath($path);
         $banner->setFileName($file->getFilename());
 
         $fileContents = file_get_contents($file->getPathname());
 
         $this->filesystem->write(
-            $mediaPath,
+            $path,
             $fileContents
         );
     }

@@ -6,8 +6,12 @@ sylius_grid:
                 options:
                     class: "%bitbag_sylius_banner_plugin.model.banner.class%"
             sorting:
-                section.name: desc
+                id: desc
             fields:
+                id:
+                    type: string
+                    enabled: false
+                    sortable: ~
                 locale.code:
                     type: string
                     label: sylius.ui.locale

@@ -29,8 +29,7 @@ class Ad implements AdInterface
 
     protected ?int $priority = null;
 
-    /** @var Collection|BannerInterface[] */
-    protected $banners = [];
+    protected Collection $banners;
 
     public function __construct()
     {

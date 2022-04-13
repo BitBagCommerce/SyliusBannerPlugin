@@ -15,3 +15,10 @@ knp_gaufrette:
     filesystems:
         bitbag_sylius_banner_plugin_banner:
             adapter: "%bitbag_sylius_banner_plugin.uploader.filesystem%"
+
+liip_imagine:
+    loaders:
+        default:
+            filesystem:
+                data_root:
+                    - "%kernel.project_dir%/public"

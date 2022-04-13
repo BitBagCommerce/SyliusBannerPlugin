@@ -26,6 +26,8 @@ bitbag_sylius_banner_plugin_banner:
     vars:
         all:
             subheader: bitbag_sylius_banner_plugin.ui.banner
+            templates:
+                form: "@BitBagSyliusBannerPlugin/Banner/_form.html.twig"
         index:
             icon: 'tags'
   type: sylius.resource

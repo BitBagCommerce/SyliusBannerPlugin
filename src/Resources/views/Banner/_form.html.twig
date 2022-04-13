@@ -1,0 +1,41 @@
+{% form_theme form '@SyliusUi/Form/imagesTheme.html.twig' %}
+
+<div class="ui one column stackable grid">
+    {{ form_errors(form) }}
+    <div class="column">
+        <div class="ui segment">
+            <h4 class="ui dividing header">{{ 'sylius.ui.general_info'|trans }}</h4>
+            <div class="two fields">
+                {{ form_row(form.locale) }}
+            </div>
+            <div class="two fields">
+                {{ form_row(form.section) }}
+            </div>
+            <div class="two fields">
+                {{ form_row(form.priority) }}
+            </div>
+        </div>
+        <div class="ui segment" id="add-banner">
+            <h4 class="ui dividing header">{{ 'bitbag_sylius_banner_plugin.ui.banner'|trans }}</h4>
+            {% if form.vars.value.path|default(null) is not null %}
+                <img class="ui small bordered image" src="{{ form.vars.value.path|imagine_filter('sylius_small') }}" alt="{{ form.vars.value.alt }}" />
+            {% endif %}
+            <div class="ui hidden element">
+                {{ form_widget(form.file, {'attr': {'id': 'bitbag-banner-image'}}) }}
+            </div>
+            <div style="margin-top: 10px" >
+                <label for="{{ form.file.vars.id }}" class="ui icon labeled button"><i class="cloud upload icon"></i> {{ 'sylius.ui.choose_file'|trans }}</label>
+            </div>
+            <div class="ui element">
+                {{- form_errors(form.file) -}}
+            </div>
+            <div class="two fields">
+                {{ form_row(form.link) }}
+            </div>
+            <div class="two fields">
+                {{ form_row(form.alt) }}
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -16,18 +16,18 @@ use Doctrine\Common\Collections\Collection;
 
 class Section implements SectionInterface
 {
-    protected ?int $id;
+    protected ?int $id = null;
 
-    protected ?string $name;
+    protected ?string $name = null;
 
-    protected ?string $code;
+    protected ?string $code = null;
 
-    protected ?int $width;
+    protected ?int $width = null;
 
-    protected ?int $height;
+    protected ?int $height = null;
 
     /** @var Collection|BannerInterface[] */
-    protected $banners;
+    protected $banners = [];
 
     public function __construct()
     {
@@ -101,5 +101,10 @@ class Section implements SectionInterface
     public function hasBanner(BannerInterface $banner): bool
     {
         return $this->banners->contains($banner);
+    }
+
+    public function __toString(): string
+    {
+        return $this->name;
     }
 }

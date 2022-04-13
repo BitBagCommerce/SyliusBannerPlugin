@@ -14,6 +14,7 @@ namespace BitBag\SyliusBannerPlugin\Entity;
 use Doctrine\Common\Collections\Collection;
 use Sylius\Component\Locale\Model\LocaleInterface;
 use Sylius\Component\Resource\Model\ResourceInterface;
+use Symfony\Component\HttpFoundation\File\File;
 
 interface BannerInterface extends ResourceInterface
 {
@@ -44,4 +45,18 @@ interface BannerInterface extends ResourceInterface
     public function removeAd(AdInterface $ad): void;
 
     public function hasAd(AdInterface $ad): bool;
+
+    public function getFile(): ?File;
+
+    public function setFile(?File $file): void;
+
+    public function hasFile(): bool;
+
+    public function getLink(): ?string;
+
+    public function setLink(?string $link): void;
+
+    public function getPriority(): ?int;
+
+    public function setPriority(?int $priority): void;
 }

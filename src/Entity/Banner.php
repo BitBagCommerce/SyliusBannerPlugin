@@ -14,23 +14,30 @@ namespace BitBag\SyliusBannerPlugin\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Sylius\Component\Locale\Model\LocaleInterface;
+use Symfony\Component\HttpFoundation\File\File;
 
 class Banner implements BannerInterface
 {
-    protected ?int $id;
+    protected ?int $id = null;
 
-    protected ?string $path;
+    protected ?string $path = null;
 
-    protected ?string $alt;
+    protected ?string $alt = null;
 
-    protected ?string $fileName;
+    protected ?string $fileName = null;
 
-    protected ?LocaleInterface $locale;
+    protected ?string $link = null;
 
-    protected ?SectionInterface $section;
+    protected ?int $priority = null;
+
+    protected ?LocaleInterface $locale = null;
+
+    protected ?SectionInterface $section = null;
+
+    protected ?File $file = null;
 
     /** @var Collection|AdInterface[] */
-    protected $ads;
+    protected $ads = [];
 
     public function __construct()
     {
@@ -114,5 +121,40 @@ class Banner implements BannerInterface
     public function hasAd(AdInterface $ad): bool
     {
         return $this->ads->contains($ad);
+    }
+
+    public function getFile(): ?File
+    {
+        return $this->file;
+    }
+
+    public function setFile(?File $file): void
+    {
+        $this->file = $file;
+    }
+
+    public function hasFile(): bool
+    {
+        return null !== $this->file;
+    }
+
+    public function getLink(): ?string
+    {
+        return $this->link;
+    }
+
+    public function setLink(?string $link): void
+    {
+        $this->link = $link;
+    }
+
+    public function getPriority(): ?int
+    {
+        return $this->priority;
+    }
+
+    public function setPriority(?int $priority): void
+    {
+        $this->priority = $priority;
     }
 }

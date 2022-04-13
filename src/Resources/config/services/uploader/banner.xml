@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+           http://symfony.com/schema/dic/services/services-1.0.xsd"
+>
+    <services>
+        <service id="bitbag_sylius_banner_plugin.banner.filesystem"
+                 class="Gaufrette\Filesystem"
+        >
+            <factory service="knp_gaufrette.filesystem_map" method="get"/>
+            <argument>%bitbag_sylius_banner_plugin.uploader.filesystem%</argument>
+        </service>
+
+        <service id="bit_bag.sylius_banner_plugin.uploader.banner_uploader"
+                 class="BitBag\SyliusBannerPlugin\Uploader\BannerUploader"
+        >
+            <argument id="sylius.context.shopper" type="service"/>
+            <argument id="bitbag_sylius_banner_plugin.banner.filesystem" type="service"/>
+        </service>
+    </services>
+</container>
+

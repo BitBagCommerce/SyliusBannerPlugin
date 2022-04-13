@@ -16,7 +16,7 @@ use BitBag\SyliusBannerPlugin\Uploader\BannerUploader;
 use Sylius\Bundle\ResourceBundle\Event\ResourceControllerEvent;
 use Webmozart\Assert\Assert;
 
-final class BannerUploadListener
+final class BannerListener
 {
     private BannerUploader $bannerUploader;
 
@@ -32,5 +32,16 @@ final class BannerUploadListener
         Assert::isInstanceOf($banner, BannerInterface::class);
 
         $this->bannerUploader->upload($banner);
+    }
+
+    public function removeBanner(ResourceControllerEvent $event): void
+    {
+        $banner = $event->getSubject();
+
+        Assert::isInstanceOf($banner, BannerInterface::class);
+
+        if(null !== $banner->getPath()){
+            $this->bannerUploader->remove($banner->getPath());
+        }
     }
 }

@@ -36,8 +36,7 @@ class Banner implements BannerInterface
 
     protected ?File $file = null;
 
-    /** @var Collection|AdInterface[] */
-    protected $ads = [];
+    protected Collection $ads;
 
     public function __construct()
     {

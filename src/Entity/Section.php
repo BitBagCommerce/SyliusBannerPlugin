@@ -26,8 +26,7 @@ class Section implements SectionInterface
 
     protected ?int $height = null;
 
-    /** @var Collection|BannerInterface[] */
-    protected $banners = [];
+    protected Collection $banners;
 
     public function __construct()
     {

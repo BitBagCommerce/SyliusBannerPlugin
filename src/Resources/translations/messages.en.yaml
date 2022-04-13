@@ -10,3 +10,5 @@ bitbag_sylius_banner_plugin:
         path: 'path'
         section: 'Section'
         sections: 'Sections'
+        file: 'File'
+        alt: 'Alt'

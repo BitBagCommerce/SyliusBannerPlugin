@@ -19,18 +19,18 @@ class Ad implements AdInterface
 {
     use ToggleableTrait;
 
-    protected ?int $id;
+    protected ?int $id = null;
 
-    protected ?string $name;
+    protected ?string $name = null;
 
-    protected ?\DateTimeInterface $startAt;
+    protected ?\DateTimeInterface $startAt = null;
 
-    protected ?\DateTimeInterface $endAt;
+    protected ?\DateTimeInterface $endAt = null;
 
-    protected ?int $priority;
+    protected ?int $priority = null;
 
     /** @var Collection|BannerInterface[] */
-    protected $banners;
+    protected $banners = [];
 
     public function __construct()
     {

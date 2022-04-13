@@ -41,7 +41,7 @@ bitbag_sylius_banner_plugin_section:
     grid: bitbag_sylius_banner_plugin_section
     vars:
         all:
-            subheader: bitbag_sylius_banner_plugin.ui.secction
+            subheader: bitbag_sylius_banner_plugin.ui.section
         index:
             icon: 'tags'
   type: sylius.resource

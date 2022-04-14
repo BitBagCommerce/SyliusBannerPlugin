@@ -17,7 +17,7 @@ use Doctrine\Common\Collections\Collection;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
-class BannerExtension extends AbstractExtension
+final class BannerExtension extends AbstractExtension
 {
     private AdRepositoryInterface $adRepository;
 

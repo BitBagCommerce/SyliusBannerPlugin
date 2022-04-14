@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace BitBag\SyliusBannerPlugin\Form\Type;
 
+use BitBag\SyliusBannerPlugin\Entity\Ad;
 use BitBag\SyliusBannerPlugin\Entity\Section;
 use Sylius\Bundle\LocaleBundle\Form\Type\LocaleChoiceType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -45,6 +46,12 @@ final class BannerType extends AbstractType
             ])
             ->add('priority', IntegerType::class, [
                 'label' => 'sylius.ui.priority',
+            ])
+            ->add('ads', EntityType::class, [
+                'label' => 'bitbag_sylius_banner_plugin.ui.ad',
+                'class' => Ad::class,
+                'choice_label' => 'name',
+                'multiple' => true,
             ]);
     }
 

@@ -23,6 +23,15 @@
             <join-column name="section_id" referenced-column-name="id"/>
         </many-to-one>
 
-        <many-to-many field="ads" mapped-by="banners" target-entity="BitBag\SyliusBannerPlugin\Entity\Ad"/>
+        <many-to-many field="ads" inversed-by="banners" target-entity="BitBag\SyliusBannerPlugin\Entity\Ad">
+            <join-table name="bitbag_banners_ads">
+                <join-columns>
+                    <join-column name="ad_id"/>
+                </join-columns>
+                <inverse-join-columns>
+                    <join-column name="banner_id" />
+                </inverse-join-columns>
+            </join-table>
+        </many-to-many>
     </mapped-superclass>
 </doctrine-mapping>

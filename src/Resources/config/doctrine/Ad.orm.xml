@@ -14,17 +14,9 @@
         <field name="startAt" column="startAt" type="datetime"/>
         <field name="endAt" column="endAt" type="datetime"/>
         <field name="priority" column="priority" type="integer"/>
+        <field name="code" column="code"/>
 
-        <many-to-many field="banners" inversed-by="ads" target-entity="BitBag\SyliusBannerPlugin\Entity\Banner">
-            <join-table name="bitbag_banners_ads">
-                <join-columns>
-                    <join-column name="ad_id"/>
-                </join-columns>
-                <inverse-join-columns>
-                    <join-column name="banner_id" />
-                </inverse-join-columns>
-            </join-table>
-        </many-to-many>
+        <many-to-many field="banners" mapped-by="ads" target-entity="BitBag\SyliusBannerPlugin\Entity\Banner"/>
 
     </mapped-superclass>
 </doctrine-mapping>

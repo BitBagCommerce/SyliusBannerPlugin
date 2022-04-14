@@ -40,4 +40,8 @@ interface AdInterface extends ResourceInterface, ToggleableInterface
     public function removeBanner(BannerInterface $banner): void;
 
     public function hasBanner(BannerInterface $banner): bool;
+
+    public function getCode(): ?string;
+
+    public function setCode(?string $code): void;
 }

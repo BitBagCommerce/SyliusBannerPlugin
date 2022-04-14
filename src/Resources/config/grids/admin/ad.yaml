@@ -24,6 +24,12 @@ sylius_grid:
                     type: string
                     label: sylius.ui.priority
                     sortable: ~
+                enabled:
+                    type: twig
+                    label: sylius.ui.enabled
+                    sortable: ~
+                    options:
+                        template: "@SyliusUi/Grid/Field/enabled.html.twig"
             actions:
                 main:
                     create:

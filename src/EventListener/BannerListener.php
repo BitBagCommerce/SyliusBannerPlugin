@@ -40,7 +40,7 @@ final class BannerListener
 
         Assert::isInstanceOf($banner, BannerInterface::class);
 
-        if(null !== $banner->getPath()){
+        if (null !== $banner->getPath()) {
             $this->bannerUploader->remove($banner->getPath());
         }
     }

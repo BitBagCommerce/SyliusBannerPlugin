@@ -23,6 +23,8 @@ class Ad implements AdInterface
 
     protected ?string $name = null;
 
+    protected ?string $code = null;
+
     protected ?\DateTimeInterface $startAt = null;
 
     protected ?\DateTimeInterface $endAt = null;
@@ -103,5 +105,15 @@ class Ad implements AdInterface
     public function hasBanner(BannerInterface $banner): bool
     {
         return $this->banners->contains($banner);
+    }
+
+    public function getCode(): ?string
+    {
+        return $this->code;
+    }
+
+    public function setCode(?string $code): void
+    {
+        $this->code = $code;
     }
 }

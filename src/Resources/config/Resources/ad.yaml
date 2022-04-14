@@ -5,3 +5,4 @@ sylius_resource:
             classes:
                 model: BitBag\SyliusBannerPlugin\Entity\Ad
                 interface: BitBag\SyliusBannerPlugin\Entity\AdInterface
+                repository: BitBag\SyliusBannerPlugin\Repository\AdRepository

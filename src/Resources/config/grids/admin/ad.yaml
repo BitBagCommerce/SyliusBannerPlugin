@@ -39,3 +39,26 @@ sylius_grid:
                         type: update
                     delete:
                         type: delete
+            filters:
+                enabled:
+                    type: boolean
+                    label: sylius.ui.enabled
+                    options:
+                        field: enabled
+                search:
+                    type: string
+                    label: sylius.ui.search
+                    options:
+                        fields: [ priority, name ]
+                start_date:
+                    type: date
+                    label: sylius.ui.starts_at
+                    options:
+                        field: startAt
+                        inclusive_to: true
+                end_date:
+                    type: date
+                    label: sylius.ui.ends_at
+                    options:
+                        field: endAt
+                        inclusive_to: true

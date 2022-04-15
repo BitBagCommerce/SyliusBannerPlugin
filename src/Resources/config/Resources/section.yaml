@@ -5,3 +5,4 @@ sylius_resource:
             classes:
                 model: BitBag\SyliusBannerPlugin\Entity\Section
                 interface: BitBag\SyliusBannerPlugin\Entity\SectionInterface
+                form: BitBag\SyliusBannerPlugin\Form\Type\SectionType

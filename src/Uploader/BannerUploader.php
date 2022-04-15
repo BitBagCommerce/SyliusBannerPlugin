@@ -44,7 +44,7 @@ final class BannerUploader implements BannerUploaderInterface
         do {
             $hash = bin2hex(random_bytes(16));
             $path = $this->expandPath(
-                sprintf('/%s.%s', $hash, $file->guessExtension()),
+                sprintf('%s.%s', $hash, $file->guessExtension()),
                 self::PATH_PREFIX
             );
         } while ($this->filesystem->has($path));
@@ -72,7 +72,7 @@ final class BannerUploader implements BannerUploaderInterface
     private function expandPath(string $path, string $pathPrefix): string
     {
         return sprintf(
-            '%s/%s/%s/%s',
+            '/%s/%s/%s/%s',
             $pathPrefix,
             substr($path, 0, 2),
             substr($path, 2, 2),

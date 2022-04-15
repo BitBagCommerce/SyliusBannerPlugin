@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+           http://symfony.com/schema/dic/services/services-1.0.xsd"
+>
+
+    <parameters>
+        <parameter key="bitbag_sylius_banner_plugin.form.type.section.validation_groups" type="collection">
+            <parameter>sylius</parameter>
+        </parameter>
+        <parameter key="bit_bag_sylius_banner_plugin.form.type.section.validation_groups" type="collection">
+            <parameter>sylius</parameter>
+        </parameter>
+    </parameters>
+    <services>
+        <service id="bit_bag.sylius_banner_plugin.form.type.banner_type"
+                 class="BitBag\SyliusBannerPlugin\Form\Type\BannerType"
+        >
+            <tag name="form.type"/>
+        </service>
+
+        <service id="bit_bag.sylius_banner_plugin.form.type.ad_type"
+                 class="BitBag\SyliusBannerPlugin\Form\Type\AdType"
+        >
+            <tag name="form.type"/>
+        </service>
+
+        <service id="bit_bag.sylius_banner_plugin.form.type.section_type"
+                 class="BitBag\SyliusBannerPlugin\Form\Type\SectionType"
+        >
+            <tag name="form.type"/>
+        </service>
+    </services>
+</container>

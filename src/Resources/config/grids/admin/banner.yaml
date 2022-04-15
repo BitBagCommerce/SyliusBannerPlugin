@@ -37,3 +37,24 @@ sylius_grid:
                         type: update
                     delete:
                         type: delete
+            filters:
+                locale:
+                    type: entity
+                    label: sylius.ui.locale
+                    options:
+                        fields: [ locale ]
+                    form_options:
+                        class: "%sylius.model.locale.class%"
+                section:
+                    type: entity
+                    label: bitbag
+                    options:
+                        fields: [ section ]
+                    form_options:
+                        class: "%bitbag_sylius_banner_plugin.model.section.class%"
+                search:
+                    type: string
+                    label: sylius.ui.priority
+                    options:
+                        fields: [ priority ]
+

@@ -29,8 +29,8 @@ final class BannerExtension extends AbstractExtension
     public function getFunctions(): array
     {
         return [
-            new TwigFunction('getActiveAdsBanners', [$this, 'getActiveAdsBannersBySectionAndLocale',]),
-            new TwigFunction('getActiveAdBanners', [$this, 'getActiveAdBannersByCodeSectionAndLocale',]),
+            new TwigFunction('getActiveAdsBanners', [$this, 'getActiveAdsBannersBySectionAndLocale']),
+            new TwigFunction('getActiveAdBanners', [$this, 'getActiveAdBannersByCodeSectionAndLocale']),
         ];
     }
 

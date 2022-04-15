@@ -15,10 +15,7 @@ use BitBag\SyliusBannerPlugin\Entity\AdInterface;
 
 interface AdRepositoryInterface
 {
-    public function getAllActiveAdsBannersBySectionAndLocale(
-        string $sectionCode,
-        string $localeCode
-    ): array;
+    public function findAllActiveAdsBanners(): array;
 
     public function findActiveAdByCode(string $code): ?AdInterface;
 }

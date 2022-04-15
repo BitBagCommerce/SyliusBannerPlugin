@@ -38,7 +38,7 @@ final class BannerExtension extends AbstractExtension
         string $sectionCode,
         string $localeCode
     ): ?array {
-        $ads = $this->adRepository->getAllActiveAdsBannersBySectionAndLocale($sectionCode, $localeCode);
+        $ads = $this->adRepository->findAllActiveAdsBanners($sectionCode, $localeCode);
 
         if (true === empty($ads)) {
             return null;

@@ -116,4 +116,9 @@ class Ad implements AdInterface
     {
         $this->code = $code;
     }
+
+    public function __toString(): string
+    {
+        return $this->getName();
+    }
 }

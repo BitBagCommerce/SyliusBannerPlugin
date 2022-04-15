@@ -6,11 +6,12 @@
            http://symfony.com/schema/dic/services/services-1.0.xsd"
 >
     <services>
-        <service id="bit_bag.sylius_banner_plugin.form.type.banner_type"
-                 class="BitBag\SyliusBannerPlugin\Form\Type\BannerType"
+        <service id="bitbag.sylius_banner_plugin.validator.ad_validator"
+                 class="BitBag\SyliusBannerPlugin\Validator\AdValidator"
+                 public="true"
         >
-            <argument type="service" id="bitbag_sylius_banner_plugin.repository.section"/>
-            <tag name="form.type"/>
+            <tag name="validator.constraint_validator" alias="bitbag_sylius_banner_plugin_validator_ad_validator"/>
         </service>
     </services>
 </container>
+

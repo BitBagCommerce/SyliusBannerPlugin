@@ -6,3 +6,4 @@ sylius_resource:
                 model: BitBag\SyliusBannerPlugin\Entity\Ad
                 interface: BitBag\SyliusBannerPlugin\Entity\AdInterface
                 repository: BitBag\SyliusBannerPlugin\Repository\AdRepository
+                form: BitBag\SyliusBannerPlugin\Form\Type\AdType

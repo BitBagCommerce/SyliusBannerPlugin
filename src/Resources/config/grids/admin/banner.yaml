@@ -5,6 +5,8 @@ sylius_grid:
                 name: doctrine/orm
                 options:
                     class: "%bitbag_sylius_banner_plugin.model.banner.class%"
+                    repository:
+                        method: createBuilder
             sorting:
                 id: desc
             fields:
@@ -47,7 +49,7 @@ sylius_grid:
                         class: "%sylius.model.locale.class%"
                 section:
                     type: entity
-                    label: bitbag
+                    label: bitbag_sylius_banner_plugin.ui.section
                     options:
                         fields: [ section ]
                     form_options:
@@ -57,4 +59,10 @@ sylius_grid:
                     label: sylius.ui.priority
                     options:
                         fields: [ priority ]
-
+                ads:
+                    type: entity
+                    label: bitbag_sylius_banner_plugin.ui.ad
+                    options:
+                        fields: [ ads.id ]
+                    form_options:
+                        class: "%bitbag_sylius_banner_plugin.model.ad.class%"

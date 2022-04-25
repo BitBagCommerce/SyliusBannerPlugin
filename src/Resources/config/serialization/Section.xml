@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+
+<serializer xmlns="http://symfony.com/schema/dic/serializer-mapping"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://symfony.com/schema/dic/serializer-mapping
+            https://symfony.com/schema/dic/serializer-mapping/serializer-mapping-1.0.xsd"
+>
+    <class name="%bitbag_sylius_banner_plugin.model.section.class%">
+        <attribute name="id">
+            <group>shop:adsBanners:read</group>
+        </attribute>
+        <attribute name="name">
+            <group>shop:adsBanners:read</group>
+        </attribute>
+        <attribute name="code">
+            <group>shop:adsBanners:read</group>
+        </attribute>
+        <attribute name="width">
+            <group>shop:adsBanners:read</group>
+        </attribute>
+        <attribute name="banners">
+            <group>shop:adsBanners:read</group>
+        </attribute>
+    </class>
+</serializer>

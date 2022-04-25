@@ -11,9 +11,8 @@ declare(strict_types=1);
 
 namespace BitBag\SyliusBannerPlugin\Twig\Extension;
 
-use BitBag\SyliusBannerPlugin\Entity\BannerInterface;
+use BitBag\SyliusBannerPlugin\Operator\BannersOperatorInterface;
 use BitBag\SyliusBannerPlugin\Repository\AdRepositoryInterface;
-use Doctrine\Common\Collections\Collection;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
@@ -21,9 +20,12 @@ final class BannerExtension extends AbstractExtension
 {
     private AdRepositoryInterface $adRepository;
 
-    public function __construct(AdRepositoryInterface $adRepository)
+    private BannersOperatorInterface $bannersOperator;
+
+    public function __construct(AdRepositoryInterface $adRepository, BannersOperatorInterface $bannersOperator)
     {
         $this->adRepository = $adRepository;
+        $this->bannersOperator = $bannersOperator;
     }
 
     public function getFunctions(): array
@@ -38,7 +40,7 @@ final class BannerExtension extends AbstractExtension
         string $sectionCode,
         string $localeCode
     ): ?array {
-        $ads = $this->adRepository->findAllActiveAdsBanners($sectionCode, $localeCode);
+        $ads = $this->adRepository->findAllActiveAds();
 
         if (true === empty($ads)) {
             return null;
@@ -46,17 +48,7 @@ final class BannerExtension extends AbstractExtension
         $banners = [];
 
         foreach ($ads as $ad) {
-            /** @var Collection $adBanners */
-            $adBanners = $ad->getBanners();
-
-            if (true === $adBanners->isEmpty()) {
-                continue;
-            }
-
-            $adBanners = $this->filterBannersBySectionAndLocale($adBanners, $sectionCode, $localeCode);
-            $adBanners = $adBanners->getValues();
-
-            uasort($adBanners, [$this, 'sortByPriority']);
+            $adBanners = $this->bannersOperator->operate($ad, $sectionCode, $localeCode);
 
             $banners = array_merge($banners, $adBanners);
         }
@@ -71,43 +63,6 @@ final class BannerExtension extends AbstractExtension
     ): ?array {
         $ad = $this->adRepository->findActiveAdByCode($adCode);
 
-        if (null === $ad) {
-            return null;
-        }
-        /** @var Collection $adBanners */
-        $adBanners = $ad->getBanners();
-
-        if (true === $adBanners->isEmpty()) {
-            return null;
-        }
-
-        $adBanners = $this->filterBannersBySectionAndLocale($adBanners, $sectionCode, $localeCode);
-        $adBanners = $adBanners->getValues();
-
-        uasort($adBanners, [$this, 'sortByPriority']);
-
-        return $adBanners;
-    }
-
-    private function filterBannersBySectionAndLocale(
-        Collection $adBanners,
-        string $sectionCode,
-        string $localeCode
-    ): Collection {
-        return $adBanners->filter(function (BannerInterface $banner) use ($sectionCode, $localeCode) {
-            if ($banner->getSection()->getCode() === $sectionCode &&
-                $banner->getLocale()->getCode() === $localeCode) {
-                return true;
-            }
-        });
-    }
-
-    private function sortByPriority($firstBanner, $secondBanner)
-    {
-        if ($firstBanner->getPriority() === $secondBanner->getPriority()) {
-            return 0;
-        }
-
-        return ($firstBanner->getPriority() < $secondBanner->getPriority()) ? 1 : -1;
+        return null !== $ad ? $this->bannersOperator->operate($ad, $sectionCode, $localeCode) : null;
     }
 }

@@ -16,4 +16,6 @@ use Doctrine\ORM\QueryBuilder;
 interface BannerRepositoryInterface
 {
     public function createBuilder(): QueryBuilder;
+
+    public function findAdBannersByLocaleAndSection(string $sectionCode, string $localeCode);
 }

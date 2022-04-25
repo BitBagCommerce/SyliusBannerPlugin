@@ -6,3 +6,4 @@ sylius_resource:
                 model: BitBag\SyliusBannerPlugin\Entity\Section
                 interface: BitBag\SyliusBannerPlugin\Entity\SectionInterface
                 form: BitBag\SyliusBannerPlugin\Form\Type\SectionType
+                repository: BitBag\SyliusBannerPlugin\Repository\SectionRepository

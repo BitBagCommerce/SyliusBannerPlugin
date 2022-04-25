@@ -19,6 +19,22 @@ class BannerRepository extends EntityRepository implements BannerRepositoryInter
     public function createBuilder(): QueryBuilder
     {
         return $this->createQueryBuilder('b')
-            ->innerJoin('b.ads','a');
+            ->innerJoin('b.ads', 'a');
+    }
+
+    public function findAdBannersByLocaleAndSection(string $sectionCode, string $localeCode)
+    {
+        return $this->createQueryBuilder('b')
+            ->innerJoin('b.locale', 'l')
+            ->innerJoin('b.section', 's')
+            ->andWhere('s.code = :sectionCode')
+            ->andWhere('l.code = :localeCode')
+            ->setParameters([
+                'sectionCode' => $sectionCode,
+                'localeCode' => $localeCode,
+            ])
+            ->addOrderBy('b.priority', 'DESC')
+            ->getQuery()
+            ->getResult();
     }
 }

@@ -12,6 +12,10 @@
             <argument id="bitbag_sylius_banner_plugin.repository.ad"
                       type="service"
             />
+            <argument id="bitbag.sylius_banner_plugin.operator.banners_operator"
+                      type="service"
+            />
+
             <tag name="twig.extension"/>
         </service>
     </services>

@@ -12,15 +12,15 @@ declare(strict_types=1);
 namespace BitBag\SyliusBannerPlugin\EventListener;
 
 use BitBag\SyliusBannerPlugin\Entity\BannerInterface;
-use BitBag\SyliusBannerPlugin\Uploader\BannerUploader;
+use BitBag\SyliusBannerPlugin\Uploader\BannerUploaderInterface;
 use Sylius\Bundle\ResourceBundle\Event\ResourceControllerEvent;
 use Webmozart\Assert\Assert;
 
 final class BannerListener
 {
-    private BannerUploader $bannerUploader;
+    private BannerUploaderInterface $bannerUploader;
 
-    public function __construct(BannerUploader $bannerUploader)
+    public function __construct(BannerUploaderInterface $bannerUploader)
     {
         $this->bannerUploader = $bannerUploader;
     }

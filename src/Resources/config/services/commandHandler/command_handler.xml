@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<container
+        xmlns="http://symfony.com/schema/dic/services"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://symfony.com/schema/dic/services
+        http://symfony.com/schema/dic/services/services-1.0.xsd"
+>
+    <services>
+        <defaults public="true"/>
+        <service id="bit_bag.sylius_banner_plugin.command_handler.get_ad_banners_command_handler"
+                 class="BitBag\SyliusBannerPlugin\CommandHandler\GetAdBannersHandler"
+        >
+            <argument id="bitbag_sylius_banner_plugin.repository.banner"
+                      type="service"
+            />
+            <argument id="bitbag.sylius_banner_plugin.operator.banners_operator"
+                      type="service"
+            />
+
+            <tag name="messenger.message_handler" bus="sylius.command_bus" />
+            <tag name="messenger.message_handler" bus="sylius_default.bus" />
+        </service>
+
+        <service id="bit_bag.sylius_banner_plugin.command_handler.get_ads_banners_command_handler"
+                 class="BitBag\SyliusBannerPlugin\CommandHandler\GetAdsBannersHandler"
+        >
+            <argument id="bitbag_sylius_banner_plugin.repository.ad"
+                      type="service"
+            />
+            <argument id="bitbag_sylius_banner_plugin.repository.section"
+                      type="service"
+            />
+            <argument id="bitbag.sylius_banner_plugin.operator.banners_operator"
+                      type="service"
+            />
+            <tag name="messenger.message_handler" bus="sylius.command_bus" />
+            <tag name="messenger.message_handler" bus="sylius_default.bus" />
+        </service>
+
+    </services>
+</container>

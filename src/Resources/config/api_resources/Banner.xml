@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+
+<resources xmlns="https://api-platform.com/schema/metadata"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="https://api-platform.com/schema/metadata
+           https://api-platform.com/schema/metadata/metadata-2.0.xsd"
+>
+    <resource class="%bitbag_sylius_banner_plugin.model.banner.class%" shortName="Banner">
+        <attribute name="validation_groups">sylius</attribute>
+
+        <property name="path"  writable="false" />
+        <property name="alt"  writable="false" />
+        <property name="fileName"  writable="false" />
+        <property name="link"  writable="false" />
+        <property name="priority"  writable="false" />
+        <property name="locale"  writable="false" />
+        <property name="section"  writable="false" />
+        <property name="ads"  writable="false" />
+        <property name="id" identifier="true" writable="false" />
+    </resource>
+</resources>

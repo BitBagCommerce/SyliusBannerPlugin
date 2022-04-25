@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+
+<resources xmlns="https://api-platform.com/schema/metadata"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="https://api-platform.com/schema/metadata
+           https://api-platform.com/schema/metadata/metadata-2.0.xsd"
+>
+    <resource class="%bitbag_sylius_banner_plugin.model.section.class%" shortName="Section">
+        <attribute name="validation_groups">sylius</attribute>
+
+        <collectionOperations>
+            <collectionOperation name="shop_get_ads_bannerss">
+                <attribute name="method">POST</attribute>
+                <attribute name="path">/shop/ads/banners</attribute>
+                <attribute name="messenger">input</attribute>
+                <attribute name="input">BitBag\SyliusBannerPlugin\Command\GetAdsBanners</attribute>
+                <attribute name="denormalization_context">
+                    <attribute name="groups">shop:adsBanners:read</attribute>
+                </attribute>
+                <attribute name="normalization_context">
+                    <attribute name="groups">shop:adsBanners:read</attribute>
+                </attribute>
+                <attribute name="openapi_context">
+                    <attribute name="summary">get ads banners by section code and locale</attribute>
+                </attribute>
+            </collectionOperation>
+        </collectionOperations>
+
+        <property name="name"  writable="false" />
+        <property name="code" identifier="true"  writable="false" />
+        <property name="width"  writable="false" />
+        <property name="height"  writable="false" />
+        <property name="banners"  writable="false" />
+        <property name="id" identifier="false" writable="false" />
+
+    </resource>
+</resources>

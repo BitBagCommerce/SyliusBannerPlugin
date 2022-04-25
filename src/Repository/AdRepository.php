@@ -16,7 +16,7 @@ use Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository;
 
 class AdRepository extends EntityRepository implements AdRepositoryInterface
 {
-    public function findAllActiveAdsBanners(): array
+    public function findAllActiveAds(): array
     {
         return $this->createQueryBuilder('a')
             ->andWhere('a.startAt < CURRENT_TIMESTAMP()')

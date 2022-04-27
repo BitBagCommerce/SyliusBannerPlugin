@@ -1,4 +1,6 @@
 bitbag_sylius_banner_plugin:
     ad:
         end_date: 'End date must be bigger than start date'
-        unique_code: 'Code must be unique'
+        unique_code: 'Ad code must be unique'
+    section:
+        unique_code: 'Section code must be unique'

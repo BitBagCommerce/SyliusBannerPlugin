@@ -1,0 +1,17 @@
+default:
+    suites:
+        ui_ad:
+            contexts:
+                - sylius.behat.context.hook.doctrine_orm
+
+                - sylius.behat.context.setup.channel
+                - sylius.behat.context.setup.admin_security
+
+                - sylius.behat.context.ui.admin.notification
+
+                - sylius.behat.context.transform.channel
+
+                - bitbag.sylius_banner_plugin.behat.context.ui.admin.ad_context
+
+            filters:
+                tags: "@managing_ad && @ui"

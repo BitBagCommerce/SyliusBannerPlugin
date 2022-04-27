@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+           http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <defaults public="true"/>
+
+        <service id="bitbag.sylius_banner_plugin.behat.context.ui.admin.section_context"
+                 class="Tests\BitBag\SyliusBannerPlugin\Behat\Context\Ui\Admin\SectionContext"
+                 >
+            <argument type="service"
+                      id="bitbag.sylius_banner_plugin.behat.page.admin.section_page"
+            />
+            <tag name="fob.context_service"/>
+        </service>
+
+        <service  id="bitbag.sylius_banner_plugin.behat.context.ui.admin.ad_context"
+                  class="Tests\BitBag\SyliusBannerPlugin\Behat\Context\Ui\Admin\AdContext"
+        >
+            <argument type="service"
+                      id="bitbag.sylius_banner_plugin.behat.page.admin.ad_page"
+            />
+            <tag name="fob.context_service"/>
+        </service>
+
+        <service id="bitbag.sylius_banner_plugin.behat.context.ui.admin.banner_context"
+                 class="Tests\BitBag\SyliusBannerPlugin\Behat\Context\Ui\Admin\BannerContext" >
+            <argument type="service"
+                      id="bitbag.sylius_banner_plugin.behat.page.admin.banner_page"
+            />
+            <argument type="service"
+                      id="doctrine.orm.entity_manager"
+            />
+            <tag name="fob.context_service"/>
+        </service>
+
+        <service id="bitbag.sylius_banner_plugin.behat.context.setup.admin.banner_setup_context"
+                 class="Tests\BitBag\SyliusBannerPlugin\Behat\Context\Setup\Admin\BannerSetupContext"
+        >
+            <argument id="bitbag_sylius_banner_plugin.repository.ad" type="service"/>
+            <argument id="bitbag_sylius_banner_plugin.repository.section" type="service"/>
+            <argument id="bitbag_sylius_banner_plugin.factory.ad" type="service"/>
+            <argument id="bitbag_sylius_banner_plugin.factory.section" type="service"/>
+            <argument id="bitbag_sylius_banner_plugin.factory.banner" type="service"/>
+            <argument id="sylius.repository.locale" type="service"/>
+            <argument id="bitbag.sylius_banner_plugin.behat.page.admin.banner_page" type="service"/>
+            <argument id="bitbag_sylius_banner_plugin.repository.banner" type="service"/>
+            <tag name="fob.context_service"/>
+        </service>
+
+        <service id="bitbag.sylius_banner_plugin.behat.context.ui.shop.banner_context"
+                 class="Tests\BitBag\SyliusBannerPlugin\Behat\Context\Ui\Shop\BannerContext"
+        >
+            <argument id="bitbag.sylius_banner_plugin.behat.page.shop.homepage" type="service"/>
+            <tag name="fob.context_service"/>
+        </service>
+    </services>
+</container>

@@ -1,0 +1,20 @@
+default:
+    suites:
+        ui_banner:
+            contexts:
+                - sylius.behat.context.hook.doctrine_orm
+
+                - sylius.behat.context.setup.channel
+                - sylius.behat.context.setup.admin_security
+
+                - sylius.behat.context.ui.admin.notification
+
+                - sylius.behat.context.transform.channel
+
+                - bitbag.sylius_banner_plugin.behat.context.ui.admin.banner_context
+                - bitbag.sylius_banner_plugin.behat.context.setup.admin.banner_setup_context
+                - bitbag.sylius_banner_plugin.behat.transformer.section_transformer
+                - bitbag.sylius_banner_plugin.behat.transformer.ad_transformer
+
+            filters:
+                tags: "@managing_banners && @ui"

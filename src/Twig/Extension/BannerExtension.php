@@ -49,8 +49,9 @@ final class BannerExtension extends AbstractExtension
 
         foreach ($ads as $ad) {
             $adBanners = $this->bannersOperator->operate($ad, $sectionCode, $localeCode);
-
-            $banners = array_merge($banners, $adBanners);
+            if (null !== $adBanners){
+                $banners = array_merge($banners, $adBanners);
+            }
         }
 
         return [] === $banners ? null : $banners;

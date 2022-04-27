@@ -1,0 +1,5 @@
+imports:
+    - suites/ui/admin/section.yaml
+    - suites/ui/admin/ad.yaml
+    - suites/ui/admin/banner.yaml
+    - suites/ui/shop/banners.yaml

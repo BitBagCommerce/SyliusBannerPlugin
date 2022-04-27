@@ -16,8 +16,7 @@ class GetAdBanners
         string $adCode,
         string $localeCode,
         string $sectionCode
-    )
-    {
+    ) {
         $this->adCode = $adCode;
         $this->localeCode = $localeCode;
         $this->sectionCode = $sectionCode;

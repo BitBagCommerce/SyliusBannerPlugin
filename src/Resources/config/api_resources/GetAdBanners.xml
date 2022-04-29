@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+
+<resources xmlns="https://api-platform.com/schema/metadata"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="https://api-platform.com/schema/metadata
+           https://api-platform.com/schema/metadata/metadata-2.0.xsd"
+>
+    <resource class="BitBag\SyliusBannerPlugin\Command\GetAdBanners" shortName="AdBanners">
+        <attribute name="validation_groups">sylius</attribute>
+
+        <itemOperations>
+            <itemOperation name="get">
+                <attribute name="controller">ApiPlatform\Core\Action\NotFoundAction</attribute>
+                <attribute name="read">false</attribute>
+                <attribute name="output">false</attribute>
+            </itemOperation>
+        </itemOperations>
+
+        <collectionOperations>
+            <collectionOperation name="get">
+                <attribute name="controller">ApiPlatform\Core\Action\NotFoundAction</attribute>
+                <attribute name="read">false</attribute>
+                <attribute name="output">false</attribute>
+            </collectionOperation>
+
+            <collectionOperation name="shop_get_ad_banners">
+                <attribute name="method">POST</attribute>
+                <attribute name="path">/shop/ad/banners</attribute>
+                <attribute name="controller">bitbag.sylius_banner_plugin.controller.get_ad_banners</attribute>
+            </collectionOperation>
+        </collectionOperations>
+
+        <property name="adCode"  writable="false" />
+        <property name="localeCode"  writable="false" />
+        <property name="sectionCode" identifier="true"  writable="false" />
+
+    </resource>
+</resources>

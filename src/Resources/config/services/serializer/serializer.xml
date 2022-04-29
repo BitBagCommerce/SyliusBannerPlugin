@@ -6,22 +6,13 @@
            http://symfony.com/schema/dic/services/services-1.0.xsd"
 >
     <services>
-        <service id="bit_bag.sylius_banner_plugin.serializer.banner_serializer"
+        <service id="bitbag.sylius_banner_plugin.serializer.banner_serializer"
                  class="BitBag\SyliusBannerPlugin\Serializer\BannerSerializer"
                  >
-            <argument id="bitbag_sylius_banner_plugin.repository.ad" type="service"/>
-
-            <tag name="serializer.normalizer" priority="64" />
         </service>
-        <service id="bit_bag.sylius_banner_plugin.serializer.section_serializer"
+        <service id="bitbag.sylius_banner_plugin.serializer.section_serializer"
                  class="BitBag\SyliusBannerPlugin\Serializer\SectionSerializer"
         >
-            <argument type="service" id="request_stack"/>
-            <argument id="bitbag_sylius_banner_plugin.repository.ad"
-                      type="service"
-            />
-            <argument type="service" id="bitbag.sylius_banner_plugin.operator.banners_operator"/>
-            <tag name="serializer.normalizer" priority="64" />
         </service>
     </services>
 </container>

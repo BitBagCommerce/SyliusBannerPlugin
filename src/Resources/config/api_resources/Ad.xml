@@ -8,24 +8,6 @@
     <resource class="%bitbag_sylius_banner_plugin.model.ad.class%" shortName="Ad">
         <attribute name="validation_groups">sylius</attribute>
 
-        <collectionOperations>
-            <collectionOperation name="shop_get_ad_banners">
-                <attribute name="method">POST</attribute>
-                <attribute name="path">/shop/ad/banners</attribute>
-                <attribute name="messenger">input</attribute>
-                <attribute name="input">BitBag\SyliusBannerPlugin\Command\GetAdBanners</attribute>
-                <attribute name="denormalization_context">
-                    <attribute name="groups">shop:adBanners:read</attribute>
-                </attribute>
-                <attribute name="normalization_context">
-                    <attribute name="groups">shop:adBanners:read</attribute>
-                </attribute>
-                <attribute name="openapi_context">
-                    <attribute name="summary">get ad banners by section code, ad code and locale</attribute>
-                </attribute>
-            </collectionOperation>
-        </collectionOperations>
-
         <property name="name"  writable="false" />
         <property name="code"  writable="false" />
         <property name="startAt"  writable="false" />
@@ -33,6 +15,5 @@
         <property name="priority"  writable="false" />
         <property name="banners"  writable="false" />
         <property name="id" identifier="true" writable="false" />
-
     </resource>
 </resources>

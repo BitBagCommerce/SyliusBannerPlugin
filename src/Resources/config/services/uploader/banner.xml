@@ -16,7 +16,6 @@
         <service id="bit_bag.sylius_banner_plugin.uploader.banner_uploader"
                  class="BitBag\SyliusBannerPlugin\Uploader\BannerUploader"
         >
-            <argument id="sylius.context.shopper" type="service"/>
             <argument id="bitbag_sylius_banner_plugin.banner.filesystem" type="service"/>
         </service>
     </services>

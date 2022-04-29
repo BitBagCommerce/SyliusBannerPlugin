@@ -33,6 +33,7 @@ interface AdInterface extends ResourceInterface, ToggleableInterface
 
     public function setPriority(?int $priority): void;
 
+    /** @return Collection<int, BannerInterface> */
     public function getBanners(): Collection;
 
     public function addBanner(BannerInterface $banner): void;

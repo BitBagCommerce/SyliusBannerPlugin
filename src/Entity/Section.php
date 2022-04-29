@@ -26,6 +26,7 @@ class Section implements SectionInterface
 
     protected ?int $height = null;
 
+    /** @var Collection<int, BannerInterface> */
     protected Collection $banners;
 
     public function __construct()
@@ -104,6 +105,6 @@ class Section implements SectionInterface
 
     public function __toString(): string
     {
-        return $this->name;
+        return $this->name ?? '';
     }
 }

@@ -42,7 +42,7 @@ final class BannerExtension extends AbstractExtension
     ): ?array {
         $ads = $this->adRepository->findAllActiveAds();
 
-        if (true === empty($ads)) {
+        if (0 === count($ads)) {
             return null;
         }
         $banners = [];

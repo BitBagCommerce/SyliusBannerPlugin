@@ -31,6 +31,7 @@ class Ad implements AdInterface
 
     protected ?int $priority = null;
 
+    /** @var Collection<int, BannerInterface> */
     protected Collection $banners;
 
     public function __construct()
@@ -119,6 +120,6 @@ class Ad implements AdInterface
 
     public function __toString(): string
     {
-        return $this->getName();
+        return $this->getName() ?? '';
     }
 }

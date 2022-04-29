@@ -32,6 +32,7 @@ interface SectionInterface extends ResourceInterface
 
     public function setHeight(?int $height): void;
 
+    /** @return Collection<int, BannerInterface> */
     public function getBanners(): Collection;
 
     public function addBanner(BannerInterface $banner): void;

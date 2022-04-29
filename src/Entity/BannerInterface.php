@@ -38,6 +38,7 @@ interface BannerInterface extends ResourceInterface
 
     public function setSection(?SectionInterface $section): void;
 
+    /** @return Collection<int, AdInterface> */
     public function getAds(): Collection;
 
     public function addAds(AdInterface $ad): void;

@@ -13,18 +13,14 @@ namespace BitBag\SyliusBannerPlugin\Uploader;
 
 use BitBag\SyliusBannerPlugin\Entity\BannerInterface;
 use Gaufrette\Filesystem;
-use Sylius\Component\Channel\Context\ChannelContextInterface;
 use Webmozart\Assert\Assert;
 
 final class BannerUploader implements BannerUploaderInterface
 {
-    private ChannelContextInterface $channelContext;
-
     private Filesystem $filesystem;
 
-    public function __construct(ChannelContextInterface $channelContext, Filesystem $filesystem)
+    public function __construct(Filesystem $filesystem)
     {
-        $this->channelContext = $channelContext;
         $this->filesystem = $filesystem;
     }
 
@@ -52,6 +48,7 @@ final class BannerUploader implements BannerUploaderInterface
         $banner->setPath($path);
         $banner->setFileName($file->getFilename());
 
+        /** @var string $fileContents */
         $fileContents = file_get_contents($file->getPathname());
 
         $this->filesystem->write(

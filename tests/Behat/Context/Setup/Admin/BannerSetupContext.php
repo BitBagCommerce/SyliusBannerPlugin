@@ -23,7 +23,7 @@ use Sylius\Behat\Service\SharedStorageInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 use Tests\BitBag\SyliusBannerPlugin\Behat\Page\Admin\BannerPage;
 
-class BannerSetupContext implements Context
+final class BannerSetupContext implements Context
 {
     private AdRepositoryInterface $adRepository;
 

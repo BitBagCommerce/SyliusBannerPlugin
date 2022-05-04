@@ -15,7 +15,7 @@ use Behat\Behat\Context\Context;
 use Sylius\Behat\NotificationType;
 use Tests\BitBag\SyliusBannerPlugin\Behat\Page\Admin\AdPage;
 
-class AdContext implements Context
+final class AdContext implements Context
 {
     private AdPage $adPage;
 

@@ -17,7 +17,7 @@ use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
 use Sylius\Behat\NotificationType;
 use Webmozart\Assert\Assert;
 
-class BannerPage extends SymfonyPage
+final class BannerPage extends SymfonyPage
 {
     public function getRouteName(): string
     {

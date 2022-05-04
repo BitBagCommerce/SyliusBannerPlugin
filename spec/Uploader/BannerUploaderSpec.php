@@ -20,7 +20,7 @@ use Prophecy\Argument;
 use Sylius\Component\Channel\Context\ChannelContextInterface;
 use Symfony\Component\HttpFoundation\File\File;
 
-class BannerUploaderSpec extends ObjectBehavior
+final class BannerUploaderSpec extends ObjectBehavior
 {
     public function let(
         ChannelContextInterface $channelContext,
@@ -56,10 +56,7 @@ class BannerUploaderSpec extends ObjectBehavior
 
         $filesystem->has('foo.jpg')->willReturn(false);
 
-//        $imagePathGenerator->generate($image)->willReturn('image/path/image.jpg');
-        $banner->setPath(Argument::type('string'));
-
-//            $filesystem->write(Argument::any(), Argument::any())->shouldBeCalled();
+        $banner->setPath(Argument::type('string'))->shouldBeCalled();
 
         $this->upload($banner);
     }

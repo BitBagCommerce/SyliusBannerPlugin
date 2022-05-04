@@ -15,7 +15,7 @@ use FriendsOfBehat\PageObjectExtension\Page\SymfonyPage;
 use Sylius\Behat\NotificationType;
 use Webmozart\Assert\Assert;
 
-class AdPage extends SymfonyPage
+final class AdPage extends SymfonyPage
 {
     public function getRouteName(): string
     {

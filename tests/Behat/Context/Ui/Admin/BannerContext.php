@@ -19,7 +19,7 @@ use Sylius\Behat\NotificationType;
 use Tests\BitBag\SyliusBannerPlugin\Behat\Page\Admin\BannerPage;
 use Webmozart\Assert\Assert;
 
-class BannerContext implements Context
+final class BannerContext implements Context
 {
     private BannerPage $bannerPage;
 

@@ -17,7 +17,7 @@ use BitBag\SyliusBannerPlugin\Repository\SectionRepositoryInterface;
 use Tests\BitBag\SyliusBannerPlugin\Behat\Context\Ui\Admin\SectionContext;
 use Webmozart\Assert\Assert;
 
-class SectionTransformer implements Context
+final class SectionTransformer implements Context
 {
     private SectionRepositoryInterface $sectionRepository;
 

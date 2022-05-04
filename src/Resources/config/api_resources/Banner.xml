@@ -8,6 +8,17 @@
     <resource class="%bitbag_sylius_banner_plugin.model.banner.class%" shortName="Banner">
         <attribute name="validation_groups">sylius</attribute>
 
+        <collectionOperations>
+            <collectionOperation name="GetAdsBanners">
+                <attribute name="method">GET</attribute>
+                <attribute name="path">/shop/ads/banners</attribute>
+            </collectionOperation>
+            <collectionOperation name="GetAdBanners">
+                <attribute name="method">GET</attribute>
+                <attribute name="path">/shop/ad/banners</attribute>
+            </collectionOperation>
+        </collectionOperations>
+
         <property name="path"  writable="false" />
         <property name="alt"  writable="false" />
         <property name="fileName"  writable="false" />

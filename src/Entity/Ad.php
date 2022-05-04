@@ -120,6 +120,6 @@ class Ad implements AdInterface
 
     public function __toString(): string
     {
-        return $this->getName() ?? '';
+        return (string) $this->name;
     }
 }

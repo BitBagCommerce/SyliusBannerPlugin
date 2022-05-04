@@ -13,7 +13,7 @@ namespace Tests\BitBag\SyliusBannerPlugin\Behat\Page\Shop;
 
 use Sylius\Behat\Page\Shop\HomePage as BaseHomePage;
 
-class Homepage extends BaseHomePage
+final class Homepage extends BaseHomePage
 {
     public function getBanners()
     {

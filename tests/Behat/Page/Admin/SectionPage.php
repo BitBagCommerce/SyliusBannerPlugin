@@ -18,7 +18,7 @@ use Sylius\Behat\Service\NotificationCheckerInterface;
 use Symfony\Component\Routing\RouterInterface;
 use Webmozart\Assert\Assert;
 
-class SectionPage extends SymfonyPage
+final class SectionPage extends SymfonyPage
 {
     private NotificationCheckerInterface $notificationChecker;
 

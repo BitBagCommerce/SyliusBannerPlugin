@@ -16,7 +16,7 @@ use BitBag\SyliusBannerPlugin\Entity\AdInterface;
 use BitBag\SyliusBannerPlugin\Repository\AdRepositoryInterface;
 use Webmozart\Assert\Assert;
 
-class AdTransformer implements Context
+final class AdTransformer implements Context
 {
     private AdRepositoryInterface $adRepository;
 

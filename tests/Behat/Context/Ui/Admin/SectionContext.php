@@ -15,7 +15,7 @@ use Behat\Behat\Context\Context;
 use Sylius\Behat\NotificationType;
 use Tests\BitBag\SyliusBannerPlugin\Behat\Page\Admin\SectionPage;
 
-class SectionContext implements Context
+final class SectionContext implements Context
 {
     private SectionPage $sectionPage;
 

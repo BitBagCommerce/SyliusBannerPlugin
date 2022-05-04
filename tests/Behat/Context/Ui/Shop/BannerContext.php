@@ -15,7 +15,7 @@ use Behat\Behat\Context\Context;
 use Tests\BitBag\SyliusBannerPlugin\Behat\Page\Shop\Homepage;
 use Webmozart\Assert\Assert;
 
-class BannerContext implements Context
+final class BannerContext implements Context
 {
     private Homepage $homePage;
 

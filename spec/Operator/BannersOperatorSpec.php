@@ -21,7 +21,7 @@ use Doctrine\Common\Collections\Collection;
 use PhpSpec\ObjectBehavior;
 use Sylius\Component\Locale\Model\LocaleInterface;
 
-class BannersOperatorSpec extends ObjectBehavior
+final class BannersOperatorSpec extends ObjectBehavior
 {
     public function it_is_initializable(): void
     {
@@ -79,59 +79,6 @@ class BannersOperatorSpec extends ObjectBehavior
 
         $this->operate($ad, 'test', 'en_US')->shouldReturn($results);
     }
-
-//    public function it_should_sort_banners_by_banners_and_ad_priority(
-//        AdInterface $ad1,
-//        AdInterface $ad2,
-//        Collection $banners,
-//        BannerInterface $banner1,
-//        BannerInterface $banner2,
-//        BannerInterface $banner3,
-//        BannerInterface $banner4,
-//        LocaleInterface $locale,
-//        SectionInterface $section
-//    ): void {
-//        $ad1Banners = new ArrayCollection([$banner1->getWrappedObject(),$banner2->getWrappedObject()]);
-//        $ad2Banners = new ArrayCollection([$banner3->getWrappedObject(),$banner4->getWrappedObject()]);
-//
-//        $ad1->getBanners()->willReturn($ad1Banners);
-//        $ad2->getBanners()->willReturn($ad2Banners);
-//
-//        $ad1->getPriority()->willReturn(10);
-//        $ad2->getPriority()->willReturn(20);
-//
-//        $banner1->getPriority()->willReturn(20);
-//        $banner2->getPriority()->willReturn(10);
-//        $banner3->getPriority()->willReturn(50);
-//        $banner4->getPriority()->willReturn(50);
-//
-//        $banner1->getSection()->willReturn($section);
-//        $banner2->getSection()->willReturn($section);
-//        $banner3->getSection()->willReturn($section);
-//        $banner3->getSection()->willReturn($section);
-//
-//        $section->getCode()->willReturn('test');
-//
-//        $banner1->getLocale()->willReturn($locale);
-//        $banner2->getLocale()->willReturn($locale);
-//        $banner3->getLocale()->willReturn($locale);
-//        $banner3->getLocale()->willReturn($locale);
-//
-//        $locale->getCode()->willReturn('en_US');
-//
-//        $results = [
-//            0 => $banner1->getWrappedObject(),
-//            1 => $banner2->getWrappedObject(),
-//            2 => $banner3->getWrappedObject(),
-//            3 => $banner4->getWrappedObject(),
-//        ];
-//
-//        $results = array_merge($ad1Banners->getValues(),$ad2Banners->getValues());
-//        uasort($results, [$this, 'sortByPriority']);
-//
-//        $this->operate($ad, 'test', 'en_US')->shouldReturn($results);
-//
-//    }
 
     private function sortByPriority($firstBanner, $secondBanner)
     {

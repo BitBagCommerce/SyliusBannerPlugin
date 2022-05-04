@@ -18,7 +18,7 @@ use PhpSpec\ObjectBehavior;
 use Sylius\Bundle\ResourceBundle\Event\ResourceControllerEvent;
 use Webmozart\Assert\InvalidArgumentException;
 
-class BannerListenerSpec extends ObjectBehavior
+final class BannerListenerSpec extends ObjectBehavior
 {
     public function let(BannerUploaderInterface $bannerUploader): void
     {

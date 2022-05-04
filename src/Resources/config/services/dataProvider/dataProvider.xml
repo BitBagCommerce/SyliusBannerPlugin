@@ -7,7 +7,7 @@
 >
     <services>
         <service id="bit_bag.sylius_banner_plugin.data_provider.get_ads_banners_data_provider"
-                 class="BitBag\SyliusBannerPlugin\DataProvider\getAdsBannersDataProvider"
+                 class="BitBag\SyliusBannerPlugin\DataProvider\GetAdsBannersDataProvider"
         >
             <argument type="service" id="bitbag_sylius_banner_plugin.repository.ad"/>
             <argument type="service" id="bitbag.sylius_banner_plugin.operator.banners_operator"/>

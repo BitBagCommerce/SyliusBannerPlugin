@@ -17,7 +17,7 @@ use BitBag\SyliusBannerPlugin\Entity\Banner;
 use BitBag\SyliusBannerPlugin\Operator\BannersOperatorInterface;
 use BitBag\SyliusBannerPlugin\Repository\AdRepositoryInterface;
 
-final class getAdsBannersDataProvider implements ContextAwareCollectionDataProviderInterface, RestrictedDataProviderInterface
+final class GetAdsBannersDataProvider implements ContextAwareCollectionDataProviderInterface, RestrictedDataProviderInterface
 {
     private AdRepositoryInterface $adRepository;
 
@@ -29,23 +29,30 @@ final class getAdsBannersDataProvider implements ContextAwareCollectionDataProvi
         $this->bannersOperator = $bannersOperator;
     }
 
-    public function supports(string $resourceClass, string $operationName = null, array $context = []): bool
+    public function supports(
+        string $resourceClass,
+        string $operationName = null,
+        array $context = []
+    ): bool
     {
         return Banner::class === $resourceClass;
     }
 
-    public function getCollection(string $resourceClass, string $operationName = null, array $context = []): iterable
+    public function getCollection(
+        string $resourceClass,
+        string $operationName = null,
+        array $context = []
+    ): iterable
     {
-
         $localeCode = $context['filters']['locale.code'] ?? null;
         $sectionCode = $context['filters']['section.code'] ?? null;
         $adCode = $context['filters']['ad.code'] ?? null;
 
-        if(null !== $localeCode && null !== $sectionCode){
+        if (null !== $localeCode && null !== $sectionCode) {
             if (null === $adCode) {
                 $ads = $this->adRepository->findAllActiveAds();
 
-                if (true === empty($ads)) {
+                if (0 === count($ads)) {
                     return [];
                 }
                 $banners = [];
@@ -60,11 +67,10 @@ final class getAdsBannersDataProvider implements ContextAwareCollectionDataProvi
 
                 return [] === $banners ? null : $banners;
             }
-            else {
-                $ad = $this->adRepository->findActiveAdByCode($adCode);
 
-                return null !== $ad ? $this->bannersOperator->operate($ad, $sectionCode, $localeCode) : [];
-            }
+            $ad = $this->adRepository->findActiveAdByCode($adCode);
+
+            return null !== $ad ? $this->bannersOperator->operate($ad, $sectionCode, $localeCode) : [];
         }
 
         return [];

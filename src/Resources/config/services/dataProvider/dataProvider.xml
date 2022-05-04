@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+           http://symfony.com/schema/dic/services/services-1.0.xsd"
+>
+    <services>
+        <service id="bit_bag.sylius_banner_plugin.data_provider.get_ads_banners_data_provider"
+                 class="BitBag\SyliusBannerPlugin\DataProvider\getAdsBannersDataProvider"
+        >
+            <argument type="service" id="bitbag_sylius_banner_plugin.repository.ad"/>
+            <argument type="service" id="bitbag.sylius_banner_plugin.operator.banners_operator"/>
+            <tag name="api_platform.subresource_data_provider"/>
+            <tag name="api_platform.item_data_provider"/>
+            <tag name="api_platform.collection_data_provider"/>
+        </service>
+    </services>
+</container>

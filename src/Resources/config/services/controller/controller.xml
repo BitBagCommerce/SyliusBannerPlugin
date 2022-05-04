@@ -10,7 +10,6 @@
 
         <service class="BitBag\SyliusBannerPlugin\Controller\GetAdsBanners"
                  id="bitbag.sylius_banner_plugin.controller.get_ads_banners"
-                 public="true"
         >
             <argument id="bitbag_sylius_banner_plugin.repository.ad"
                       type="service"
@@ -21,7 +20,8 @@
         </service>
 
         <service id="bitbag.sylius_banner_plugin.controller.get_ad_banners"
-                 class="BitBag\SyliusBannerPlugin\Controller\GetAdBanners" >
+                 class="BitBag\SyliusBannerPlugin\Controller\GetAdBanners"
+        >
             <argument id="bitbag_sylius_banner_plugin.repository.ad"
                       type="service"
             />

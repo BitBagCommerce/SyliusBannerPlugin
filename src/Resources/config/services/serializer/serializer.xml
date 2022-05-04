@@ -8,8 +8,9 @@
     <services>
         <service id="bitbag.sylius_banner_plugin.serializer.banner_serializer"
                  class="BitBag\SyliusBannerPlugin\Serializer\BannerSerializer"
-                 >
+        >
         </service>
+
         <service id="bitbag.sylius_banner_plugin.serializer.section_serializer"
                  class="BitBag\SyliusBannerPlugin\Serializer\SectionSerializer"
         >

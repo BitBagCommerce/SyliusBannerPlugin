@@ -22,7 +22,7 @@ class BannerRepository extends EntityRepository implements BannerRepositoryInter
             ->innerJoin('b.ads', 'a');
     }
 
-    public function findAdBannersByLocaleAndSection(string $sectionCode, string $localeCode)
+    public function findAdBannersByLocaleAndSection(string $sectionCode, string $localeCode): array
     {
         return $this->createQueryBuilder('b')
             ->innerJoin('b.locale', 'l')

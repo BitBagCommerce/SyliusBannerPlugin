@@ -33,8 +33,7 @@ final class GetAdsBannersDataProvider implements ContextAwareCollectionDataProvi
         string $resourceClass,
         string $operationName = null,
         array $context = []
-    ): bool
-    {
+    ): bool {
         return Banner::class === $resourceClass;
     }
 
@@ -42,8 +41,7 @@ final class GetAdsBannersDataProvider implements ContextAwareCollectionDataProvi
         string $resourceClass,
         string $operationName = null,
         array $context = []
-    ): iterable
-    {
+    ): iterable {
         $localeCode = $context['filters']['locale.code'] ?? null;
         $sectionCode = $context['filters']['section.code'] ?? null;
         $adCode = $context['filters']['ad.code'] ?? null;

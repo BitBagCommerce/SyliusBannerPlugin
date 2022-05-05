@@ -42,8 +42,7 @@ final class AdContext implements Context
         string $endDate,
         int $priority,
         string $code
-    )
-    {
+    ) {
         $this->adPage->setAdFormData(
             $name,
             $enabled,

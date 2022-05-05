@@ -32,8 +32,7 @@ final class SectionContext implements Context
         string $code,
         int $width,
         int $height
-    )
-    {
+    ) {
         $this->sectionPage->setSectionData($name, $code, $width, $height);
         $this->sectionPage->submitForm();
     }

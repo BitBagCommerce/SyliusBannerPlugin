@@ -65,12 +65,12 @@ final class GetAdsBannersDataProvider implements ContextAwareCollectionDataProvi
                     }
                 }
 
-                return [] === $banners ? null : $banners;
+                return [] === $banners ? [] : $banners;
             }
 
             $ad = $this->adRepository->findActiveAdByCode($adCode);
 
-            return null !== $ad ? $this->bannersOperator->operate($ad, $sectionCode, $localeCode) : [];
+            return null !== $ad ? $this->bannersOperator->operate($ad, $sectionCode, $localeCode) ?? [] : [];
         }
 
         return [];

@@ -22,7 +22,7 @@ final class BannersOperator implements BannersOperatorInterface
         string $sectionCode,
         string $localeCode
     ): ?array {
-        /** @var Collection $adBanners */
+        /** @var Collection<int, BannerInterface> $adBanners */
         $adBanners = $ad->getBanners();
         if (true === $adBanners->isEmpty()) {
             return null;
@@ -36,20 +36,27 @@ final class BannersOperator implements BannersOperatorInterface
         return $adBanners;
     }
 
+    /**
+     * @param Collection<int, BannerInterface> $adBanners
+     *
+     * @return Collection<int, BannerInterface>
+     */
     private function filterBannersBySectionAndLocale(
         Collection $adBanners,
         string $sectionCode,
         string $localeCode
     ): Collection {
         return $adBanners->filter(function (BannerInterface $banner) use ($sectionCode, $localeCode) {
-            if ($banner->getSection()->getCode() === $sectionCode &&
+            if (null !== $banner->getLocale() &&
+                null !== $banner->getSection() &&
+                $banner->getSection()->getCode() === $sectionCode &&
                 $banner->getLocale()->getCode() === $localeCode) {
                 return true;
             }
         });
     }
 
-    private function sortByPriority($firstBanner, $secondBanner)
+    private function sortByPriority(BannerInterface $firstBanner, BannerInterface $secondBanner): int
     {
         if ($firstBanner->getPriority() === $secondBanner->getPriority()) {
             return 0;

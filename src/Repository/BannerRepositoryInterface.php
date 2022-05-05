@@ -17,5 +17,5 @@ interface BannerRepositoryInterface
 {
     public function createBuilder(): QueryBuilder;
 
-    public function findAdBannersByLocaleAndSection(string $sectionCode, string $localeCode);
+    public function findAdBannersByLocaleAndSection(string $sectionCode, string $localeCode): array;
 }

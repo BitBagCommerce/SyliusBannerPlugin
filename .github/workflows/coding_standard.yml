@@ -1,9 +1,6 @@
 name: Coding standard
 
 on:
-    push:
-        branches-ignore:
-            - 'dependabot/**'
     pull_request: ~
     release:
         types: [created]
@@ -23,6 +20,10 @@ jobs:
                 sylius: ["~1.10.0", "~1.11.0"]
                 node: ["10.x"]
                 mysql: ["8.0"]
+
+                exclude:
+                    -   sylius: ~1.11.0
+                        php: 7.4
 
         env:
             APP_ENV: test

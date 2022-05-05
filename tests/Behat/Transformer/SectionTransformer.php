@@ -14,7 +14,6 @@ namespace Tests\BitBag\SyliusBannerPlugin\Behat\Transformer;
 use Behat\Behat\Context\Context;
 use BitBag\SyliusBannerPlugin\Entity\SectionInterface;
 use BitBag\SyliusBannerPlugin\Repository\SectionRepositoryInterface;
-use Tests\BitBag\SyliusBannerPlugin\Behat\Context\Ui\Admin\SectionContext;
 use Webmozart\Assert\Assert;
 
 final class SectionTransformer implements Context

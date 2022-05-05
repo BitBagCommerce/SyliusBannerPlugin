@@ -67,8 +67,7 @@ final class BannerContext implements Context
         AdInterface $adCode,
         string $locale,
         int $priority
-    )
-    {
+    ) {
         $this->bannerPage->fillGeneralInfoForm($sectionCode, $adCode, $locale, $priority);
     }
 
@@ -79,8 +78,7 @@ final class BannerContext implements Context
         string $image,
         string $alt,
         string $link
-    )
-    {
+    ) {
         $this->bannerPage->fillBannerInfoForm($alt, $link);
         $this->bannerPage->attachImage($image);
     }

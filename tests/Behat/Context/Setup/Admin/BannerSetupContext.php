@@ -19,7 +19,6 @@ use BitBag\SyliusBannerPlugin\Repository\AdRepositoryInterface;
 use BitBag\SyliusBannerPlugin\Repository\BannerRepository;
 use BitBag\SyliusBannerPlugin\Repository\SectionRepositoryInterface;
 use Doctrine\Persistence\ObjectRepository;
-use Sylius\Behat\Service\SharedStorageInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 use Tests\BitBag\SyliusBannerPlugin\Behat\Page\Admin\BannerPage;
 
@@ -84,8 +83,7 @@ final class BannerSetupContext implements Context
         string $code,
         int $priority,
         string $name
-    )
-    {
+    ) {
         /** @var AdInterface $ad */
         $ad = $this->adFactory->createNew();
 
@@ -106,8 +104,7 @@ final class BannerSetupContext implements Context
         string $code,
         int $priority,
         string $name
-    )
-    {
+    ) {
         /** @var AdInterface $ad */
         $ad = $this->adFactory->createNew();
 

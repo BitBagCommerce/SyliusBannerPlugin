@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace BitBag\SyliusBannerPlugin\Twig\Extension;
 
-use BitBag\SyliusBannerPlugin\Operator\BannersOperatorInterface;
+use BitBag\SyliusBannerPlugin\Provider\BannersProviderInterface;
 use BitBag\SyliusBannerPlugin\Repository\AdRepositoryInterface;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
@@ -20,12 +20,12 @@ final class BannerExtension extends AbstractExtension
 {
     private AdRepositoryInterface $adRepository;
 
-    private BannersOperatorInterface $bannersOperator;
+    private BannersProviderInterface $bannersProvider;
 
-    public function __construct(AdRepositoryInterface $adRepository, BannersOperatorInterface $bannersOperator)
+    public function __construct(AdRepositoryInterface $adRepository, BannersProviderInterface $bannersProvider)
     {
         $this->adRepository = $adRepository;
-        $this->bannersOperator = $bannersOperator;
+        $this->bannersProvider = $bannersProvider;
     }
 
     public function getFunctions(): array
@@ -45,16 +45,8 @@ final class BannerExtension extends AbstractExtension
         if (0 === count($ads)) {
             return null;
         }
-        $banners = [];
 
-        foreach ($ads as $ad) {
-            $adBanners = $this->bannersOperator->operate($ad, $sectionCode, $localeCode);
-            if (null !== $adBanners) {
-                $banners = array_merge($banners, $adBanners);
-            }
-        }
-
-        return [] === $banners ? null : $banners;
+        return $this->bannersProvider->getAdsBanners($ads, $sectionCode, $localeCode);
     }
 
     public function getActiveAdBannersByCodeSectionAndLocale(
@@ -64,6 +56,10 @@ final class BannerExtension extends AbstractExtension
     ): ?array {
         $ad = $this->adRepository->findActiveAdByCode($adCode);
 
-        return null !== $ad ? $this->bannersOperator->operate($ad, $sectionCode, $localeCode) : null;
+        if (null === $ad) {
+            return null;
+        }
+
+        return $this->bannersProvider->getAdBanners($ad, $sectionCode, $localeCode);
     }
 }

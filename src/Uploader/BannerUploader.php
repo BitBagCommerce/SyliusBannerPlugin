@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace BitBag\SyliusBannerPlugin\Uploader;
 
 use BitBag\SyliusBannerPlugin\Entity\BannerInterface;
+use BitBag\SyliusBannerPlugin\Generator\BannerPathGeneratorInterface;
 use Gaufrette\Filesystem;
 use Webmozart\Assert\Assert;
 
@@ -19,9 +20,12 @@ final class BannerUploader implements BannerUploaderInterface
 {
     private Filesystem $filesystem;
 
-    public function __construct(Filesystem $filesystem)
+    private BannerPathGeneratorInterface $bannerPathGenerator;
+
+    public function __construct(Filesystem $filesystem, BannerPathGeneratorInterface $bannerPathGenerator)
     {
         $this->filesystem = $filesystem;
+        $this->bannerPathGenerator = $bannerPathGenerator;
     }
 
     public function upload(BannerInterface $banner): void
@@ -38,11 +42,7 @@ final class BannerUploader implements BannerUploaderInterface
         }
 
         do {
-            $hash = bin2hex(random_bytes(16));
-            $path = $this->expandPath(
-                sprintf('%s.%s', $hash, $file->guessExtension()),
-                self::PATH_PREFIX
-            );
+            $path = $this->bannerPathGenerator->generate($banner);
         } while ($this->filesystem->has($path));
 
         $banner->setPath($path);
@@ -64,17 +64,6 @@ final class BannerUploader implements BannerUploaderInterface
         }
 
         return false;
-    }
-
-    private function expandPath(string $path, string $pathPrefix): string
-    {
-        return sprintf(
-            '/%s/%s/%s/%s',
-            $pathPrefix,
-            substr($path, 0, 2),
-            substr($path, 2, 2),
-            substr($path, 4)
-        );
     }
 
     private function has(string $path): bool

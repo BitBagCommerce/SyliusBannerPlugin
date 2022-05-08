@@ -9,8 +9,8 @@
         <service id="bitbag.sylius_banner_plugin.provider.banners_provider"
                  class="BitBag\SyliusBannerPlugin\Provider\BannersProvider"
         >
-            <argument id="bitbag.sylius_banner_plugin.operator.banners_operator"
-                      type="service"
+            <argument type="service"
+                      id="bitbag.sylius_banner_plugin.operator.banners_operator"
             />
         </service>
     </services>

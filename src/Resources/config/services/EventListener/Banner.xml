@@ -6,10 +6,12 @@
            http://symfony.com/schema/dic/services/services-1.0.xsd"
 >
     <services>
-        <service id="bit_bag.sylius_banner_plugin.event_listener.banner_listener"
+        <service id="bitbag.sylius_banner_plugin.event_listener.banner_listener"
                  class="BitBag\SyliusBannerPlugin\EventListener\BannerListener"
         >
-            <argument id="bit_bag.sylius_banner_plugin.uploader.banner_uploader" type="service"/>
+            <argument type="service"
+                      id="bitbag.sylius_banner_plugin.uploader.banner_uploader"
+            />
             <tag name="kernel.event_listener"
                  event="bitbag_sylius_banner_plugin.banner.pre_create"
                  method="uploadBanner"

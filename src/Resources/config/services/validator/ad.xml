@@ -10,7 +10,9 @@
                  class="BitBag\SyliusBannerPlugin\Validator\AdValidator"
                  public="true"
         >
-            <tag name="validator.constraint_validator" alias="bitbag_sylius_banner_plugin_validator_ad_validator"/>
+            <tag name="validator.constraint_validator"
+                 alias="bitbag_sylius_banner_plugin_validator_ad_validator"
+            />
         </service>
     </services>
 </container>

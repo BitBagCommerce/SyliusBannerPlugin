@@ -13,14 +13,14 @@
             <argument>%bitbag_sylius_banner_plugin.uploader.filesystem%</argument>
         </service>
 
-        <service id="bit_bag.sylius_banner_plugin.uploader.banner_uploader"
+        <service id="bitbag.sylius_banner_plugin.uploader.banner_uploader"
                  class="BitBag\SyliusBannerPlugin\Uploader\BannerUploader"
         >
-            <argument id="bitbag_sylius_banner_plugin.banner.filesystem"
-                      type="service"
+            <argument type="service"
+                      id="bitbag_sylius_banner_plugin.banner.filesystem"
             />
-            <argument id="bitbag.sylius_banner_plugin.generator.banner_path_generator"
-                      type="service"
+            <argument type="service"
+                      id="bitbag.sylius_banner_plugin.generator.banner_path_generator"
             />
         </service>
     </services>

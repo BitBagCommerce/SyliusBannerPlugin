@@ -6,16 +6,15 @@
            http://symfony.com/schema/dic/services/services-1.0.xsd"
 >
     <services>
-        <service id="bit_bag.sylius_banner_plugin.twig.extension.ad_twig_extension"
+        <service id="bitbag.sylius_banner_plugin.twig.extension.ad_twig_extension"
                  class="BitBag\SyliusBannerPlugin\Twig\Extension\BannerExtension"
         >
-            <argument id="bitbag_sylius_banner_plugin.repository.ad"
-                      type="service"
+            <argument type="service"
+                      id="bitbag_sylius_banner_plugin.repository.ad"
             />
-            <argument id="bitbag.sylius_banner_plugin.provider.banners_provider"
-                      type="service"
+            <argument type="service"
+                      id="bitbag.sylius_banner_plugin.provider.banners_provider"
             />
-
             <tag name="twig.extension"/>
         </service>
     </services>

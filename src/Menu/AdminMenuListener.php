@@ -20,7 +20,7 @@ final class AdminMenuListener
         $menu = $event->getMenu();
 
         $newSubmenu = $menu
-            ->addChild('Banners')
+            ->addChild('bitbag_sylius_banner_plugin')
             ->setLabel('bitbag_sylius_banner_plugin.ui.banners')
             ->setLabelAttribute('icon', 'images outline')
         ;

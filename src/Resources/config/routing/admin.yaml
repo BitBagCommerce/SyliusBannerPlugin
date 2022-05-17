@@ -4,6 +4,7 @@ bitbag_sylius_banner_plugin_ad:
     section: admin
     path: /banner/ad
     permission: true
+    only: [show, update, delete, create, index]
     templates: "@SyliusAdmin\\Crud"
     redirect: update
     grid: bitbag_sylius_banner_plugin_ad
@@ -20,6 +21,7 @@ bitbag_sylius_banner_plugin_banner:
     section: admin
     path: /banner/banner
     permission: true
+    only: [show, update, delete, create, index]
     templates: "@SyliusAdmin\\Crud"
     redirect: update
     grid: bitbag_sylius_banner_plugin_banner
@@ -27,7 +29,7 @@ bitbag_sylius_banner_plugin_banner:
         all:
             subheader: bitbag_sylius_banner_plugin.ui.banner
             templates:
-                form: "@BitBagSyliusBannerPlugin/Banner/_form.html.twig"
+                form: "@BitBagSyliusBannerPlugin/Admin/Banner/_form.html.twig"
         index:
             icon: 'tags'
   type: sylius.resource
@@ -38,6 +40,7 @@ bitbag_sylius_banner_plugin_section:
     section: admin
     path: /banner/section
     permission: true
+    only: [show, update, delete, create, index]
     templates: "@SyliusAdmin\\Crud"
     redirect: update
     grid: bitbag_sylius_banner_plugin_section

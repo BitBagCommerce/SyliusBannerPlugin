@@ -15,7 +15,7 @@ use BitBag\SyliusBannerPlugin\Entity\BannerInterface;
 
 interface BannerPathGeneratorInterface
 {
-    public const PATH_PREFIX = 'banner/image';
+    public const PATH_PREFIX = 'media/image';
 
     public function generate(BannerInterface $banner): string;
 }

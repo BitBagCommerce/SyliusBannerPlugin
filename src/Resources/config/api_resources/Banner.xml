@@ -9,11 +9,11 @@
         <attribute name="validation_groups">sylius</attribute>
 
         <collectionOperations>
-            <collectionOperation name="GetAdsBanners">
+            <collectionOperation name="get_ads_banners">
                 <attribute name="method">GET</attribute>
                 <attribute name="path">/shop/ads/banners</attribute>
             </collectionOperation>
-            <collectionOperation name="GetAdBanners">
+            <collectionOperation name="get_ad_banners">
                 <attribute name="method">GET</attribute>
                 <attribute name="path">/shop/ad/banners</attribute>
             </collectionOperation>

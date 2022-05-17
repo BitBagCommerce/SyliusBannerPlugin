@@ -28,6 +28,7 @@ final class BannerType extends AbstractType
         $builder
             ->add('alt', TextType::class, [
                 'label' => 'bitbag_sylius_banner_plugin.ui.alt',
+                'required' => false,
             ])
             ->add('locale', LocaleChoiceType::class, [
                 'label' => 'sylius.ui.locales',
@@ -43,6 +44,7 @@ final class BannerType extends AbstractType
             ])
             ->add('link', TextType::class, [
                 'label' => 'sylius.ui.links',
+                'required' => false,
             ])
             ->add('priority', IntegerType::class, [
                 'label' => 'sylius.ui.priority',

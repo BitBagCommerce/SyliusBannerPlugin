@@ -14,7 +14,7 @@ namespace BitBag\SyliusBannerPlugin\Generator;
 use BitBag\SyliusBannerPlugin\Entity\BannerInterface;
 use Symfony\Component\HttpFoundation\File\File;
 
-class BannerPathGenerator implements BannerPathGeneratorInterface
+final class BannerPathGenerator implements BannerPathGeneratorInterface
 {
     public function generate(BannerInterface $banner): string
     {

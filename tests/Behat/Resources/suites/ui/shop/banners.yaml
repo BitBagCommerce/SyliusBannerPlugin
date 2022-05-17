@@ -15,7 +15,7 @@ default:
                 - sylius.behat.context.ui.admin.notification
                 - sylius.behat.context.ui.shop.locale
                 - sylius.behat.context.ui.channel
-                -
+
                 - bitbag.sylius_banner_plugin.behat.context.ui.shop.banner_context
                 - bitbag.sylius_banner_plugin.behat.context.ui.admin.banner_context
                 - bitbag.sylius_banner_plugin.behat.context.setup.admin.banner_setup_context

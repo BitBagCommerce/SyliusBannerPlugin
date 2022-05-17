@@ -17,6 +17,7 @@ Feature: Adding a new banner
         And I add new image "ford.jpg" and fill alt as "test-alt" and link as "/homepage"
         And I submit form
         Then I should be notified that it has been successfully created
+        And "TEST-AD" ad should has 1 banners
 
     @ui
     Scenario: Adding 2 banners to one ad

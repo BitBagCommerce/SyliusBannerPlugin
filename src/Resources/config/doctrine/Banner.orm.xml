@@ -10,9 +10,9 @@
             <generator strategy="AUTO"/>
         </id>
         <field name="path" column="path" unique="true"/>
-        <field name="alt" column="alt"/>
+        <field name="alt" column="alt" nullable="true"/>
         <field name="fileName" column="filename"/>
-        <field name="link" column="link"/>
+        <field name="link" column="link" nullable="true"/>
         <field name="priority" column="priority" type="integer"/>
 
         <many-to-one field="locale" target-entity="Sylius\Component\Locale\Model\LocaleInterface">

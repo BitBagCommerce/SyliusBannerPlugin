@@ -42,7 +42,6 @@ final class BannersOperatorSpec extends ObjectBehavior
 
     public function it_should_sort_banners_by_banners_priority(
         AdInterface $ad,
-        Collection $banners,
         BannerInterface $banner1,
         BannerInterface $banner2,
         BannerInterface $banner3,
@@ -68,19 +67,14 @@ final class BannersOperatorSpec extends ObjectBehavior
 
         $locale->getCode()->willReturn('en_US');
 
-        $results = [
-            0 => $banner1->getWrappedObject(),
-            1 => $banner2->getWrappedObject(),
-            2 => $banner3->getWrappedObject(),
-        ];
-
         $results = $adBanners->getValues();
+
         uasort($results, [$this, 'sortByPriority']);
 
         $this->operate($ad, 'test', 'en_US')->shouldReturn($results);
     }
 
-    private function sortByPriority($firstBanner, $secondBanner)
+    private function sortByPriority($firstBanner, $secondBanner): int
     {
         if ($firstBanner->getPriority() === $secondBanner->getPriority()) {
             return 0;

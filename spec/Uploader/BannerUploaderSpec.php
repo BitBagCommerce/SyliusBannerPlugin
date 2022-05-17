@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace spec\BitBag\SyliusBannerPlugin\Uploader;
 
 use BitBag\SyliusBannerPlugin\Entity\BannerInterface;
+use BitBag\SyliusBannerPlugin\Generator\BannerPathGeneratorInterface;
 use BitBag\SyliusBannerPlugin\Uploader\BannerUploader;
 use BitBag\SyliusBannerPlugin\Uploader\BannerUploaderInterface;
 use Gaufrette\Filesystem;
@@ -23,14 +24,14 @@ use Symfony\Component\HttpFoundation\File\File;
 final class BannerUploaderSpec extends ObjectBehavior
 {
     public function let(
-        ChannelContextInterface $channelContext,
         Filesystem $filesystem,
-        BannerInterface $banner
-    ) {
+        BannerInterface $banner,
+        BannerPathGeneratorInterface $bannerPathGenerator
+    ): void {
         $file = new File(__FILE__);
         $banner->getFile()->willReturn($file);
 
-        $this->beConstructedWith($channelContext, $filesystem);
+        $this->beConstructedWith($filesystem,$bannerPathGenerator);
     }
 
     public function it_is_initializable(): void
@@ -44,20 +45,9 @@ final class BannerUploaderSpec extends ObjectBehavior
         $filesystem->has('path/to/img')->willReturn(true);
         $filesystem->delete('path/to/img')->willReturn(true);
 
+        $filesystem->has('path/to/img')->shouldBeCalled();
+        $filesystem->delete('path/to/img')->shouldBeCalled();
+
         $this->remove('path/to/img');
-    }
-
-    public function it_uploads_a_banner(
-        Filesystem $filesystem,
-        BannerInterface $banner
-    ): void {
-        $banner->hasFile()->willReturn(true);
-        $banner->getPath()->willReturn('foo.jpg');
-
-        $filesystem->has('foo.jpg')->willReturn(false);
-
-        $banner->setPath(Argument::type('string'))->shouldBeCalled();
-
-        $this->upload($banner);
     }
 }

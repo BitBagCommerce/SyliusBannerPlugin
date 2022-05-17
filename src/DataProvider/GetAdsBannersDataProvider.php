@@ -42,9 +42,9 @@ final class GetAdsBannersDataProvider implements ContextAwareCollectionDataProvi
         string $operationName = null,
         array $context = []
     ): iterable {
-        $localeCode = $context['filters']['locale.code'] ?? null;
-        $sectionCode = $context['filters']['section.code'] ?? null;
-        $adCode = $context['filters']['ad.code'] ?? null;
+        $localeCode = $context['filters']['locale_code'] ?? null;
+        $sectionCode = $context['filters']['section_code'] ?? null;
+        $adCode = $context['filters']['ad_code'] ?? null;
 
         if (null !== $localeCode && null !== $sectionCode) {
             if (null === $adCode) {

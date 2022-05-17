@@ -1,8 +1,0 @@
-{% set banners = getActiveAdsBanners("TEST-SECTION", 'en_US' ) %}
-    <div class="banners">
-        {% for banner in banners %}
-            <a href="{{banner.link}}">
-                <img class="ui fluid image" src="{{ asset(banner.path) }}" alt="{{banner.alt}}" data-order="{{loop.index}}">
-            </a>
-        {% endfor %}
-    </div>

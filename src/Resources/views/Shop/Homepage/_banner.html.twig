@@ -1,0 +1,36 @@
+{% set banners = getActiveAdsBanners('homepage', sylius.localeCode) %}
+
+{% if banners and banners|length %}
+	<div class="banners-wrapper">
+		<div class="banners-carousel js-banners-carousel">
+			{% for banner in banners %}
+				<div class="banners-slide js-banners-slide">
+					{% if banner.link %}
+						<a href="{{ banner.link }}" class="banners-item">
+					{% else %}
+						<div class="banners-item">
+					{% endif %}
+						
+						<img
+							src="{{ banner.path }}"
+							alt="{{ banner.alt }}"
+						/>
+
+					{% if banner.link %}
+						</a>
+					{% else %}
+						</div>
+					{% endif %}
+				</div>
+			{% endfor %}
+		</div>
+
+		<button class="banners-nav-left ui huge black icon button js-banners-nav-left">
+			<i class="left arrow icon"></i>
+		</button>
+
+		<button class="banners-nav-right ui huge black icon button js-banners-nav-right">
+			<i class="right arrow icon"></i>
+		</button>
+	</div>
+{% endif %}

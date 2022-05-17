@@ -11,8 +11,8 @@
         </id>
         <field name="name" column="name" unique="true"/>
         <field name="code" column="code" unique="true"/>
-        <field name="width" column="width" type="integer"/>
-        <field name="height" column="height" type="integer"/>
+        <field name="width" column="width" type="integer" nullable="true"/>
+        <field name="height" column="height" type="integer" nullable="true"/>
 
         <one-to-many field="banners" target-entity="BitBag\SyliusBannerPlugin\Entity\Banner" mapped-by="section"/>
     </mapped-superclass>

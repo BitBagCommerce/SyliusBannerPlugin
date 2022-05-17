@@ -14,7 +14,7 @@ namespace BitBag\SyliusBannerPlugin\Provider;
 use BitBag\SyliusBannerPlugin\Entity\AdInterface;
 use BitBag\SyliusBannerPlugin\Operator\BannersOperatorInterface;
 
-class BannersProvider implements BannersProviderInterface
+final class BannersProvider implements BannersProviderInterface
 {
     private BannersOperatorInterface $bannersOperator;
 

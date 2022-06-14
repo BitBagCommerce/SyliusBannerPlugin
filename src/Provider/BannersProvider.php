@@ -34,6 +34,7 @@ final class BannersProvider implements BannersProviderInterface
             $adBanners = $this->bannersOperator->operate($ad, $sectionCode, $localeCode);
             if (null !== $adBanners) {
                 $banners = array_merge($banners, $adBanners);
+                $banners = array_unique($banners, \SORT_REGULAR);
             }
         }
 

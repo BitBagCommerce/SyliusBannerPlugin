@@ -1,0 +1,5 @@
+bitbag_sylius_banner_plugin_count_banner_clicks:
+    path: /banner/{id}/count
+    methods: [GET]
+    defaults:
+        _controller: bitbag.sylius_banner_plugin.controller.action.count_clicks_action

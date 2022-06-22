@@ -1,4 +1,4 @@
-{% set banners = getActiveAdsBanners('homepage', sylius.localeCode) %}
+{% set banners = getActiveAdsBanners('TEST', sylius.localeCode) %}
 
 {% if banners and banners|length %}
 	<div class="banners-wrapper">
@@ -6,19 +6,15 @@
 			{% for banner in banners %}
 				<div class="banners-slide js-banners-slide">
 					{% if banner.link %}
-						<a href="{{ banner.link }}" class="banners-item">
-					{% else %}
-						<div class="banners-item">
-					{% endif %}
-						
-						<img
-							src="{{ banner.path }}"
-							alt="{{ banner.alt }}"
-						/>
-
-					{% if banner.link %}
+						<a href="{{ path(
+							'bitbag_sylius_banner_plugin_count_banner_clicks',
+							{id: banner.id}) }}" class="banners-item"
+						>
+							<img src="{{ banner.path }}" alt="{{ banner.alt }}"/>
 						</a>
 					{% else %}
+						<div class="banners-item">
+							<img src="{{ banner.path }}" alt="{{ banner.alt }}"/>
 						</div>
 					{% endif %}
 				</div>

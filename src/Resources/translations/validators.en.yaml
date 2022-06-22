@@ -4,3 +4,5 @@ bitbag_sylius_banner_plugin:
         unique_code: 'Ad code must be unique'
     section:
         unique_code: 'Section code must be unique'
+    banner:
+        link_http: 'Link have to include http:// or https://'

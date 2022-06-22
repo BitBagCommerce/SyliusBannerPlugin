@@ -60,4 +60,10 @@ interface BannerInterface extends ResourceInterface
     public function getPriority(): ?int;
 
     public function setPriority(?int $priority): void;
+
+    public function getClicks(): int;
+
+    public function setClicks(int $clicks): void;
+
+    public function click(): void;
 }

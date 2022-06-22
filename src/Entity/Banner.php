@@ -36,6 +36,8 @@ class Banner implements BannerInterface
 
     protected ?File $file = null;
 
+    protected int $clicks = 0;
+
     /** @var Collection<int, AdInterface> */
     protected Collection $ads;
 
@@ -156,5 +158,20 @@ class Banner implements BannerInterface
     public function setPriority(?int $priority): void
     {
         $this->priority = $priority;
+    }
+
+    public function getClicks(): int
+    {
+        return $this->clicks;
+    }
+
+    public function setClicks(int $clicks): void
+    {
+        $this->clicks = $clicks;
+    }
+
+    public function click(): void
+    {
+        ++$this->clicks;
     }
 }

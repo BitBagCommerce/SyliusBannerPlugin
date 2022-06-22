@@ -20,6 +20,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 final class BannerType extends AbstractType
 {
@@ -55,6 +56,13 @@ final class BannerType extends AbstractType
                 'choice_label' => 'name',
                 'multiple' => true,
             ]);
+    }
+
+    public function configureOptions(OptionsResolver $resolver): void
+    {
+        $resolver->setDefaults([
+            'validation_groups' => ['sylius'],
+        ]);
     }
 
     public function getBlockPrefix(): string

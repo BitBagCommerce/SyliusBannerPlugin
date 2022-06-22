@@ -22,6 +22,10 @@ sylius_grid:
                     type: string
                     label: bitbag_sylius_banner_plugin.ui.section
                     sortable: ~
+                clicks:
+                    type: string
+                    label: clicks
+                    sortable: ~
                 path:
                     type: string
                     label: bitbag_sylius_banner_plugin.ui.path

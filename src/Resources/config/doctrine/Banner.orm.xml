@@ -14,6 +14,11 @@
         <field name="fileName" column="filename"/>
         <field name="link" column="link" nullable="true"/>
         <field name="priority" column="priority" type="integer"/>
+        <field name="clicks" column="clicks" type="integer">
+            <options>
+                <option name="default">0</option>
+            </options>
+        </field>
 
         <many-to-one field="locale" target-entity="Sylius\Component\Locale\Model\LocaleInterface">
             <join-column name="locale_id" referenced-column-name="id"/>

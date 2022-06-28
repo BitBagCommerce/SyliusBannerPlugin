@@ -43,7 +43,7 @@
         "symfony/intl": "^4.4 || ^5.2",
         "symfony/web-profiler-bundle": "^4.4 || ^5.2",
         "symfony/webpack-encore-bundle": "^1.14",
-        "vimeo/psalm": "4.23.0"
+        "vimeo/psalm": "4.24.0"
     },
     "config": {
         "sort-packages": true

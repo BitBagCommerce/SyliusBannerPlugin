@@ -14,7 +14,7 @@ Feature: Adding a new banner
     @ui
     Scenario: Adding a new banner
         When I fill form with "TEST-SECTION" section, "TEST-AD" ad, "en_US" and "100" priority
-        And I add new image "ford.jpg" and fill alt as "test-alt" and link as "/homepage"
+        And I add new image "ford.jpg" and fill alt as "test-alt" and link as "http://127.0.0.1:8000/en_US"
         And I submit form
         Then I should be notified that it has been successfully created
         And "TEST-AD" ad should has 1 banners
@@ -22,12 +22,12 @@ Feature: Adding a new banner
     @ui
     Scenario: Adding 2 banners to one ad
         When I fill form with "TEST-SECTION" section, "TEST-AD" ad, "en_US" and "100" priority
-        And I add new image "ford.jpg" and fill alt as "test-alt" and link as "/homepage"
+        And I add new image "ford.jpg" and fill alt as "test-alt" and link as "http://127.0.0.1:8000/en_US"
         And I submit form
         Then I should be notified that it has been successfully created
         And I am on new banner page
         And I fill form with "TEST-SECTION" section, "TEST-AD" ad, "en_US" and "150" priority
-        And I add new image "troll.jpg" and fill alt as "test-alt" and link as "/homepage"
+        And I add new image "troll.jpg" and fill alt as "test-alt" and link as "http://127.0.0.1:8000/en_US"
         And I submit form
         Then I should be notified that it has been successfully created
         And "TEST-AD" ad should has 2 banners

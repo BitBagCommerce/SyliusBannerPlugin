@@ -26,6 +26,7 @@ final class BannerValidator extends ConstraintValidator
         if (!$constraint instanceof Banner) {
             throw new UnexpectedTypeException($constraint, Banner::class);
         }
+
         if (null !== $banner->getLink() && 0 !== strpos($banner->getLink(), 'http')) {
             $this->context->buildViolation($constraint->message)->atPath('link')->addViolation();
         }

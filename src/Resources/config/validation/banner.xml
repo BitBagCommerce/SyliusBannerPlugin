@@ -6,6 +6,17 @@
                     https://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd"
 >
     <class name="BitBag\SyliusBannerPlugin\Entity\Banner">
+        <property name="priority">
+            <constraint name="NotNull">
+                <option name="groups">sylius</option>
+            </constraint>
+        </property>
+        <property name="locale">
+            <constraint name="NotNull">
+                <option name="groups">sylius</option>
+            </constraint>
+        </property>
+
         <constraint name="BitBag\SyliusBannerPlugin\Validator\Banner">
             <option name="groups">sylius</option>
         </constraint>

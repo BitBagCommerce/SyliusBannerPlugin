@@ -6,6 +6,17 @@
                     https://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd"
 >
     <class name="BitBag\SyliusBannerPlugin\Entity\Section">
+        <property name="code">
+            <constraint name="NotNull">
+                <option name="groups">sylius</option>
+            </constraint>
+        </property>
+        <property name="name">
+            <constraint name="NotNull">
+                <option name="groups">sylius</option>
+            </constraint>
+        </property>
+
         <constraint name="Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity">
             <option name="fields">code</option>
             <option name="message">bitbag_sylius_banner_plugin.section.unique_code</option>

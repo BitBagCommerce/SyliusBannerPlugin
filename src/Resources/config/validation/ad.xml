@@ -6,6 +6,32 @@
                     https://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd"
 >
     <class name="BitBag\SyliusBannerPlugin\Entity\Ad">
+        <property name="priority">
+            <constraint name="NotNull">
+                <option name="groups">sylius</option>
+            </constraint>
+        </property>
+        <property name="code">
+            <constraint name="NotNull">
+                <option name="groups">sylius</option>
+            </constraint>
+        </property>
+        <property name="name">
+            <constraint name="NotNull">
+                <option name="groups">sylius</option>
+            </constraint>
+        </property>
+        <property name="startAt">
+            <constraint name="NotNull">
+                <option name="groups">sylius</option>
+            </constraint>
+        </property>
+        <property name="endAt">
+            <constraint name="NotNull">
+                <option name="groups">sylius</option>
+            </constraint>
+        </property>
+
         <constraint name="BitBag\SyliusBannerPlugin\Validator\Ad">
             <option name="groups">sylius</option>
         </constraint>

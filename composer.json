@@ -45,6 +45,9 @@
         "symfony/webpack-encore-bundle": "^1.14",
         "vimeo/psalm": "4.23.0"
     },
+    "conflict": {
+        "composer/composer": "2.3.9"
+    },
     "config": {
         "sort-packages": true,
         "allow-plugins": {

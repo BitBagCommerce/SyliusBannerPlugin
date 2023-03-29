@@ -13,7 +13,7 @@ Feature: showing banners in correct order
 
   @ui
   Scenario: I see 2 banners from 1 ad in banners priority order
-    When I show homepage with the locale "English (United States)"
+    When I visit homepage
     Then I see 2 banners on homepage
     And Banner "ford.jpg" should be 1 in order
     And Banner "troll.jpg" should be 2 in order
@@ -23,7 +23,7 @@ Feature: showing banners in correct order
     Given The store has active ad with code "TEST-AD2" and 200 priority and "second ad" name
     And The store has banner with image "mugs.jpg" alt "new image1" and link "/products" in "TEST-SECTION" section and "TEST-AD2" ad with priority 5 in the "en_US" locale
     And The store has banner with image "lamborghini.jpg" alt "new image2" and link "/products" in "TEST-SECTION" section and "TEST-AD2" ad with priority 10 in the "en_US" locale
-    And I show homepage with the locale "English (United States)"
+    When I visit homepage
     When I see 4 banners on homepage
     Then Banner "lamborghini.jpg" should be 1 in order
     And Banner "mugs.jpg" should be 2 in order
@@ -35,7 +35,7 @@ Feature: showing banners in correct order
     Given The store has non active ad with code "TEST-AD2" and 200 priority and "second ad" name
     And The store has banner with image "mugs.jpg" alt "new image1" and link "/products" in "TEST-SECTION" section and "TEST-AD2" ad with priority 5 in the "en_US" locale
     And The store has banner with image "lamborghini.jpg" alt "new image2" and link "/products" in "TEST-SECTION" section and "TEST-AD2" ad with priority 10 in the "en_US" locale
-    And I show homepage with the locale "English (United States)"
+    When I visit homepage
     When I see 2 banners on homepage
     And Banner "ford.jpg" should be 1 in order
     And Banner "troll.jpg" should be 2 in order

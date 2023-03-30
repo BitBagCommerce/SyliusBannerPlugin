@@ -52,5 +52,4 @@ final class BannerContext implements Context
     {
         $this->homePage->open();
     }
-
 }

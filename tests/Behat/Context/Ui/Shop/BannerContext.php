@@ -44,4 +44,12 @@ final class BannerContext implements Context
         Assert::true(str_contains($banners[$order - 1]->getOuterHtml(), $path));
         Assert::eq((int) $banners[$order - 1]->getAttribute('data-order'), $order);
     }
+
+    /**
+     * @When I visit homepage
+     */
+    public function iVisitHomepage()
+    {
+        $this->homePage->open();
+    }
 }

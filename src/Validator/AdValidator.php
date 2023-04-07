@@ -19,7 +19,7 @@ use Webmozart\Assert\Assert;
 
 final class AdValidator extends ConstraintValidator
 {
-    public function validate($ad, Constraint $constraint): void
+    public function validate(mixed $ad, Constraint $constraint): void
     {
         Assert::isInstanceOf($ad, AdInterface::class);
 

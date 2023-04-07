@@ -19,7 +19,7 @@ use Webmozart\Assert\Assert;
 
 final class BannerValidator extends ConstraintValidator
 {
-    public function validate($banner, Constraint $constraint): void
+    public function validate(mixed $banner, Constraint $constraint): void
     {
         Assert::isInstanceOf($banner, BannerInterface::class);
 

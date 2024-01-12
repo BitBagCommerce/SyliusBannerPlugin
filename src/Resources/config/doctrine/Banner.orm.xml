@@ -24,11 +24,11 @@
             <join-column name="locale_id" referenced-column-name="id"/>
         </many-to-one>
 
-        <many-to-one field="section" target-entity="BitBag\SyliusBannerPlugin\Entity\Section" inversed-by="banners">
+        <many-to-one field="section" target-entity="BitBag\SyliusBannerPlugin\Entity\SectionInterface" inversed-by="banners">
             <join-column name="section_id" referenced-column-name="id"/>
         </many-to-one>
 
-        <many-to-many field="ads" inversed-by="banners" target-entity="BitBag\SyliusBannerPlugin\Entity\Ad">
+        <many-to-many field="ads" inversed-by="banners" target-entity="BitBag\SyliusBannerPlugin\Entity\AdInterface">
             <join-table name="bitbag_banners_ads">
                 <join-columns>
                     <join-column name="banner_id"/>

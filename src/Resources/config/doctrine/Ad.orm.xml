@@ -16,7 +16,7 @@
         <field name="priority" column="priority" type="integer"/>
         <field name="code" column="code"/>
 
-        <many-to-many field="banners" mapped-by="ads" target-entity="BitBag\SyliusBannerPlugin\Entity\Banner"/>
+        <many-to-many field="banners" mapped-by="ads" target-entity="BitBag\SyliusBannerPlugin\Entity\BannerInterface"/>
 
     </mapped-superclass>
 </doctrine-mapping>

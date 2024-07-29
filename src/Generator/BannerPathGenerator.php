@@ -25,7 +25,7 @@ final class BannerPathGenerator implements BannerPathGeneratorInterface
 
         return $this->expandPath(
             sprintf('%s.%s', $hash, $file->guessExtension()),
-            self::PATH_PREFIX
+            self::PATH_PREFIX,
         );
     }
 
@@ -36,7 +36,7 @@ final class BannerPathGenerator implements BannerPathGeneratorInterface
             $pathPrefix,
             substr($path, 0, 2),
             substr($path, 2, 2),
-            substr($path, 4)
+            substr($path, 4),
         );
     }
 }

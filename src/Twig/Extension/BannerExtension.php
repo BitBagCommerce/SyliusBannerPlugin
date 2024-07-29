@@ -38,7 +38,7 @@ final class BannerExtension extends AbstractExtension
 
     public function getActiveAdsBannersBySectionAndLocale(
         string $sectionCode,
-        string $localeCode
+        string $localeCode,
     ): ?array {
         $ads = $this->adRepository->findAllActiveAds();
 
@@ -52,7 +52,7 @@ final class BannerExtension extends AbstractExtension
     public function getActiveAdBannersByCodeSectionAndLocale(
         string $adCode,
         string $sectionCode,
-        string $localeCode
+        string $localeCode,
     ): ?array {
         $ad = $this->adRepository->findActiveAdByCode($adCode);
 

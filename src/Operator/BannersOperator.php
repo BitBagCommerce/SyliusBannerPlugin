@@ -20,7 +20,7 @@ final class BannersOperator implements BannersOperatorInterface
     public function operate(
         AdInterface $ad,
         string $sectionCode,
-        string $localeCode
+        string $localeCode,
     ): ?array {
         /** @var Collection<int, BannerInterface> $adBanners */
         $adBanners = $ad->getBanners();
@@ -44,7 +44,7 @@ final class BannersOperator implements BannersOperatorInterface
     private function filterBannersBySectionAndLocale(
         Collection $adBanners,
         string $sectionCode,
-        string $localeCode
+        string $localeCode,
     ): Collection {
         return $adBanners->filter(function (BannerInterface $banner) use ($sectionCode, $localeCode) {
             if (null !== $banner->getLocale() &&

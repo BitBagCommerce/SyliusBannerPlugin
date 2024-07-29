@@ -26,7 +26,7 @@ final class BannersProvider implements BannersProviderInterface
     public function getAdsBanners(
         array $ads,
         string $sectionCode,
-        string $localeCode
+        string $localeCode,
     ): ?array {
         $banners = [];
 
@@ -44,7 +44,7 @@ final class BannersProvider implements BannersProviderInterface
     public function getAdBanners(
         AdInterface $ad,
         string $sectionCode,
-        string $localeCode
+        string $localeCode,
     ): ?array {
         return $this->bannersOperator->operate($ad, $sectionCode, $localeCode);
     }

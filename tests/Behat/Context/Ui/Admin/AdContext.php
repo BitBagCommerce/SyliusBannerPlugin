@@ -41,7 +41,7 @@ final class AdContext implements Context
         string $startDate,
         string $endDate,
         int $priority,
-        string $code
+        string $code,
     ) {
         $this->adPage->setAdFormData(
             $name,
@@ -49,7 +49,7 @@ final class AdContext implements Context
             $startDate,
             $endDate,
             $priority,
-            $code
+            $code,
         );
         $this->adPage->submitForm();
     }

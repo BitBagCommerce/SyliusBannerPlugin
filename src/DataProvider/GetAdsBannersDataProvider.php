@@ -32,7 +32,7 @@ final class GetAdsBannersDataProvider implements ContextAwareCollectionDataProvi
     public function supports(
         string $resourceClass,
         string $operationName = null,
-        array $context = []
+        array $context = [],
     ): bool {
         return Banner::class === $resourceClass;
     }
@@ -40,7 +40,7 @@ final class GetAdsBannersDataProvider implements ContextAwareCollectionDataProvi
     public function getCollection(
         string $resourceClass,
         string $operationName = null,
-        array $context = []
+        array $context = [],
     ): iterable {
         $localeCode = $context['filters']['locale_code'] ?? null;
         $sectionCode = $context['filters']['section_code'] ?? null;

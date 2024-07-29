@@ -37,7 +37,7 @@ final class AdTransformer implements Context
 
         Assert::notNull(
             $ad,
-            sprintf('Banner ad with code "%s" does not exist', $adCode)
+            sprintf('Banner ad with code "%s" does not exist', $adCode),
         );
 
         return $ad;

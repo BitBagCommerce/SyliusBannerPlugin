@@ -18,6 +18,6 @@ interface BannersOperatorInterface
     public function operate(
         AdInterface $ad,
         string $sectionCode,
-        string $localeCode
+        string $localeCode,
     ): ?array;
 }

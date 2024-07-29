@@ -13,23 +13,26 @@ on:
 
 jobs:
     tests:
-        runs-on: ubuntu-22.04
+        runs-on: ubuntu-latest
 
-        name: "Sylius ${{ matrix.sylius }}, PHP ${{ matrix.php }}, Symfony ${{ matrix.symfony }}, MySQL ${{ matrix.mysql }}"
+        name: "Sylius ${{ matrix.sylius }}, PHP ${{ matrix.php }}, Symfony ${{ matrix.symfony }}, 
+  MySQL ${{ matrix.mysql }}, State Machine Adapter ${{ matrix.state_machine_adapter }}"
 
         strategy:
             fail-fast: false
             matrix:
-                php: [ 8.0 ]
-                symfony: [ ^5.4, ^6.0 ]
-                sylius: [ ~1.11.0, ~1.12.0 ]
-                node: [ 14.x ]
-                mysql: [ 5.7, 8.0 ]
+                php: ["8.0", "8.1", "8.2", "8.3"]
+                symfony: ["^5.4", "^6.0"]
+                sylius: ["~1.12.0", "~1.13.0"]
+                node: ["^20.x"]
+                mysql: ["8.0"]
+                state_machine_adapter: ["winzou_state_machine", "symfony_workflow"]
 
                 exclude:
-                    -
-                        sylius: ~1.11.0
-                        symfony: ^6.0
+                    - sylius: "~1.12.0"
+                      state_machine_adapter: "symfony_workflow"
+                    - sylius: "~1.13.0"
+                      php: "8.0"
 
         env:
             APP_ENV: test
@@ -147,14 +150,14 @@ jobs:
                   path: etc/build/
                   if-no-files-found: ignore
 
-            - name: Failed build Slack notification
-              uses: rtCamp/action-slack-notify@v2
-              if: ${{ failure() && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master') }}
-              env:
-                  SLACK_CHANNEL: ${{ secrets.FAILED_BUILD_SLACK_CHANNEL }}
-                  SLACK_COLOR: ${{ job.status }}
-                  SLACK_ICON: https://github.com/rtCamp.png?size=48
-                  SLACK_MESSAGE: ':x:'
-                  SLACK_TITLE: Failed build on ${{ github.event.repository.name }} repository
-                  SLACK_USERNAME: ${{ secrets.FAILED_BUILD_SLACK_USERNAME }}
-                  SLACK_WEBHOOK: ${{ secrets.FAILED_BUILD_SLACK_WEBHOOK }}
+#            - name: Failed build Slack notification
+#              uses: rtCamp/action-slack-notify@v2
+#              if: ${{ failure() && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master') }}
+#              env:
+#                  SLACK_CHANNEL: ${{ secrets.FAILED_BUILD_SLACK_CHANNEL }}
+#                  SLACK_COLOR: ${{ job.status }}
+#                  SLACK_ICON: https://github.com/rtCamp.png?size=48
+#                  SLACK_MESSAGE: ':x:'
+#                  SLACK_TITLE: Failed build on ${{ github.event.repository.name }} repository
+#                  SLACK_USERNAME: ${{ secrets.FAILED_BUILD_SLACK_USERNAME }}
+#                  SLACK_WEBHOOK: ${{ secrets.FAILED_BUILD_SLACK_WEBHOOK }}

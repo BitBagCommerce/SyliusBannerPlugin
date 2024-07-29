@@ -26,7 +26,7 @@ final class CountClicksAction
 
     public function __construct(
         BannerRepositoryInterface $bannerRepository,
-        ObjectManager $objectManager
+        ObjectManager $objectManager,
     ) {
         $this->bannerRepository = $bannerRepository;
         $this->objectManager = $objectManager;

@@ -26,7 +26,7 @@ final class SectionPage extends SymfonyPage
         Session $session,
         $minkParameters,
         RouterInterface $router,
-        NotificationCheckerInterface $notificationChecker
+        NotificationCheckerInterface $notificationChecker,
     ) {
         parent::__construct($session, $minkParameters, $router);
         $this->notificationChecker = $notificationChecker;
@@ -41,7 +41,7 @@ final class SectionPage extends SymfonyPage
         string $name,
         string $code,
         int $width,
-        int $height
+        int $height,
     ): void {
         $this->getElement('section_name_field')->setValue($name);
         $this->getElement('section_code_field')->setValue($code);

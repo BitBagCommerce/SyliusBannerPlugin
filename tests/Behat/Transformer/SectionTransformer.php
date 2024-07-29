@@ -37,7 +37,7 @@ final class SectionTransformer implements Context
 
         Assert::notNull(
             $section,
-            sprintf('Banner section with code "%s" does not exist', $sectionCode)
+            sprintf('Banner section with code "%s" does not exist', $sectionCode),
         );
 
         return $section;

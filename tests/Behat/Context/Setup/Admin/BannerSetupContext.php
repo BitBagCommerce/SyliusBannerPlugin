@@ -48,7 +48,7 @@ final class BannerSetupContext implements Context
         FactoryInterface $bannerFactory,
         ObjectRepository $localeRepository,
         BannerPage $bannerPage,
-        BannerRepository $bannerRepository
+        BannerRepository $bannerRepository,
     ) {
         $this->adRepository = $adRepository;
         $this->sectionRepository = $sectionRepository;
@@ -82,7 +82,7 @@ final class BannerSetupContext implements Context
     public function theStoreHasActiveAdWithCode(
         string $code,
         int $priority,
-        string $name
+        string $name,
     ) {
         /** @var AdInterface $ad */
         $ad = $this->adFactory->createNew();
@@ -103,7 +103,7 @@ final class BannerSetupContext implements Context
     public function theStoreHasNonActiveAdWithCode(
         string $code,
         int $priority,
-        string $name
+        string $name,
     ) {
         /** @var AdInterface $ad */
         $ad = $this->adFactory->createNew();
@@ -128,7 +128,7 @@ final class BannerSetupContext implements Context
         SectionInterface $section,
         AdInterface $ad,
         int $priority,
-        string $locale
+        string $locale,
     ) {
         $locale = $this->localeRepository->findOneBy(['code' => $locale]);
 

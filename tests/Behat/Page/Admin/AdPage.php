@@ -26,7 +26,7 @@ final class AdPage extends SymfonyPage
         string $name,
         string $code,
         int $width,
-        int $height
+        int $height,
     ): void {
         $this->getElement('section_name_field')->setValue($name);
         $this->getElement('section_code_field')->setValue($code);
@@ -57,7 +57,7 @@ final class AdPage extends SymfonyPage
         string $startDate,
         string $endDate,
         int $priority,
-        string $code
+        string $code,
     ) {
         $this->getElement('section_name_field')->setValue($name);
         $this->getElement('section_code_field')->setValue($code);

@@ -53,7 +53,7 @@ final class BannerUploader implements BannerUploaderInterface
 
         $this->filesystem->write(
             $path,
-            $fileContents
+            $fileContents,
         );
     }
 

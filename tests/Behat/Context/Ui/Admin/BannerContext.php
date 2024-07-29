@@ -27,7 +27,7 @@ final class BannerContext implements Context
 
     public function __construct(
         BannerPage $bannerPage,
-        ObjectManager $manager
+        ObjectManager $manager,
     ) {
         $this->bannerPage = $bannerPage;
         $this->manager = $manager;
@@ -66,7 +66,7 @@ final class BannerContext implements Context
         SectionInterface $sectionCode,
         AdInterface $adCode,
         string $locale,
-        int $priority
+        int $priority,
     ) {
         $this->bannerPage->fillGeneralInfoForm($sectionCode, $adCode, $locale, $priority);
     }
@@ -77,7 +77,7 @@ final class BannerContext implements Context
     public function iAddNewImageAndFillAltAsAndLinksAs(
         string $image,
         string $alt,
-        string $link
+        string $link,
     ) {
         $this->bannerPage->fillBannerInfoForm($alt, $link);
         $this->bannerPage->attachImage($image);

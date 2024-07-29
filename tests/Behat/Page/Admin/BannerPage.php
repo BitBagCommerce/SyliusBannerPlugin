@@ -28,7 +28,7 @@ final class BannerPage extends SymfonyPage
         string $name,
         string $code,
         int $width,
-        int $height
+        int $height,
     ): void {
         $this->getElement('section_name_field')->setValue($name);
         $this->getElement('section_code_field')->setValue($code);
@@ -57,7 +57,7 @@ final class BannerPage extends SymfonyPage
         SectionInterface $sectionCode,
         AdInterface $adCode,
         string $locale,
-        int $priority
+        int $priority,
     ): void {
         $this->getElement('banner_locale_field')->setValue($locale);
         $this->getElement('banner_section_field')->setValue($sectionCode->getId());

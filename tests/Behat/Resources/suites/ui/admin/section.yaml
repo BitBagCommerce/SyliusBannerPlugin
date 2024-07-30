@@ -14,4 +14,4 @@ default:
                 - bitbag.sylius_banner_plugin.behat.context.ui.admin.section_context
 
             filters:
-                tags: "@managing_sections && @ui"
+                tags: "@managing_sections&&@ui"

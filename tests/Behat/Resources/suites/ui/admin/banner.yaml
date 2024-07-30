@@ -17,4 +17,4 @@ default:
                 - bitbag.sylius_banner_plugin.behat.transformer.ad_transformer
 
             filters:
-                tags: "@managing_banners && @ui"
+                tags: "@managing_banners&&@ui"

@@ -90,7 +90,7 @@ final class BannerPage extends SymfonyPage
             'banner_section_field' => '#bitbag_sylius_banner_plugin_banner_section',
             'banner_priority_field' => '#bitbag_sylius_banner_plugin_banner_priority',
             'banner_ad_field' => '#bitbag_sylius_banner_plugin_banner_ads',
-            'banner_file_field' => '#bitbag_sylius_banner_plugin_banner_file',
+            'banner_file_field' => 'input[name="bitbag_sylius_banner_plugin_banner[file]"]',
             'banner_link_field' => '#bitbag_sylius_banner_plugin_banner_link',
             'banner_alt_field' => '#bitbag_sylius_banner_plugin_banner_alt',
         ]);

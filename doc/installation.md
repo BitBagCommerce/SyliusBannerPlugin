@@ -4,7 +4,7 @@
 1. *We work on stable, supported and up-to-date versions of packages. We recommend you to do the same.*
 
 ```bash
-$ composer require bitbag/banner-plugin
+composer require bitbag/banner-plugin --no-scripts
 ```
 
 2. Add plugin dependencies to your `config/bundles.php` file:
@@ -38,11 +38,17 @@ bitbag_sylius_banner_plugin:
     resource: "@BitBagSyliusBannerPlugin/Resources/config/routing.yaml"
 ```
 
-5. Finish the installation by updating the database schema and installing assets:
+5. Please clear the cache:
 
 ```
-$ bin/console doctrine:migrations:diff
-$ bin/console doctrine:migrations:migrate
+bin/console cache:clear
+```
+
+6. Finish the installation by updating the database schema and installing assets:
+
+```
+bin/console doctrine:migrations:diff
+bin/console doctrine:migrations:migrate
 ```
 
 ## Testing & running the plugin

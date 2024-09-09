@@ -6,7 +6,6 @@ GENERAL
 - [Composer](#composer)
 - [Basic configuration](#basic-configuration)
 ---
----
 ADDITIONAL
 - [Tests](#tests)
 - [Known Issues](#known-issues)

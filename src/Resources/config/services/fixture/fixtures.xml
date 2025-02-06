@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="bitbag.sylius_banner_plugin.fixture.banner_section_fixture"
+                 class="BitBag\SyliusBannerPlugin\Fixture\BannerSectionFixture"
+                 public="true"
+        >
+            <argument type="service" id="bitbag.sylius_banner_plugin.fixture.factory.banner_section_fixture_factory" />
+
+            <tag name="sylius_fixtures.fixture" />
+        </service>
+    </services>
+</container>

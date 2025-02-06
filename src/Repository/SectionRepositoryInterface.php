@@ -13,8 +13,9 @@ namespace BitBag\SyliusBannerPlugin\Repository;
 
 use BitBag\SyliusBannerPlugin\Entity\AdInterface;
 use BitBag\SyliusBannerPlugin\Entity\SectionInterface;
+use Sylius\Component\Resource\Repository\RepositoryInterface;
 
-interface SectionRepositoryInterface
+interface SectionRepositoryInterface extends RepositoryInterface
 {
     public function findAllActiveAdsBanners(string $sectionCode, string $localeCode): ?SectionInterface;
 

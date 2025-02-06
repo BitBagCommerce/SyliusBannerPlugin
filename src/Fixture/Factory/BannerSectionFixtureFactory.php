@@ -17,6 +17,7 @@ use BitBag\SyliusBannerPlugin\Entity\SectionInterface;
 use BitBag\SyliusBannerPlugin\Repository\AdRepositoryInterface;
 use BitBag\SyliusBannerPlugin\Repository\BannerRepositoryInterface;
 use BitBag\SyliusBannerPlugin\Repository\SectionRepositoryInterface;
+use Sylius\Component\Locale\Model\LocaleInterface;
 use Sylius\Component\Resource\Factory\FactoryInterface;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
 
@@ -53,14 +54,15 @@ final class BannerSectionFixtureFactory implements FixtureFactoryInterface
 
                     $banner->setPath($bannerData['path']);
                     $banner->setAlt($bannerData['alt'] ?? null);
-                    $banner->setFilename($bannerData['filename']);
+                    $banner->setFileName($bannerData['filename']);
                     $banner->setLink($bannerData['link'] ?? null);
                     $banner->setPriority($bannerData['priority']);
                     $banner->setClicks($bannerData['clicks'] ?? 0);
 
+                    /** @var ?LocaleInterface $locale */
                     $locale = $this->localeRepository->findOneBy(['code' => $bannerData['locale']]);
 
-                    if (!$locale) {
+                    if (null === $locale) {
                         throw new \Exception(sprintf('Locale with code "%s" not found', $bannerData['locale']));
                     }
 
@@ -85,12 +87,12 @@ final class BannerSectionFixtureFactory implements FixtureFactoryInterface
                             $banner->addAds($ad);
                         }
                     }
+
+                    $banner->setSection($section);
+
+                    $this->bannerRepository->add($banner);
                 }
             }
-
-            $banner->setSection($section);
-
-            $this->bannerRepository->add($banner);
         }
     }
 }

@@ -30,7 +30,7 @@ final class BannerSectionFixtureFactory implements FixtureFactoryInterface
         private SectionRepositoryInterface $sectionRepository,
         private BannerRepositoryInterface $bannerRepository,
         private AdRepositoryInterface $adRepository,
-        private RepositoryInterface $localeRepository
+        private RepositoryInterface $localeRepository,
     ) {
     }
 

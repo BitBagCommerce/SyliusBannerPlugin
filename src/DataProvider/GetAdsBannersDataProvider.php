@@ -13,20 +13,16 @@ namespace BitBag\SyliusBannerPlugin\DataProvider;
 
 use ApiPlatform\Core\DataProvider\ContextAwareCollectionDataProviderInterface;
 use ApiPlatform\Core\DataProvider\RestrictedDataProviderInterface;
-use BitBag\SyliusBannerPlugin\Entity\Banner;
 use BitBag\SyliusBannerPlugin\Provider\BannersProviderInterface;
 use BitBag\SyliusBannerPlugin\Repository\AdRepositoryInterface;
 
 final class GetAdsBannersDataProvider implements ContextAwareCollectionDataProviderInterface, RestrictedDataProviderInterface
 {
-    private AdRepositoryInterface $adRepository;
-
-    private BannersProviderInterface $bannersProvider;
-
-    public function __construct(AdRepositoryInterface $adRepository, BannersProviderInterface $bannersProvider)
-    {
-        $this->adRepository = $adRepository;
-        $this->bannersProvider = $bannersProvider;
+    public function __construct(
+        private AdRepositoryInterface $adRepository,
+        private BannersProviderInterface $bannersProvider,
+        private string $class,
+    ) {
     }
 
     public function supports(
@@ -34,7 +30,7 @@ final class GetAdsBannersDataProvider implements ContextAwareCollectionDataProvi
         string $operationName = null,
         array $context = [],
     ): bool {
-        return Banner::class === $resourceClass;
+        return $this->class === $resourceClass;
     }
 
     public function getCollection(

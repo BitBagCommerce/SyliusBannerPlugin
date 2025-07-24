@@ -35,6 +35,7 @@
         "phpunit/phpunit": "^9.5",
         "polishsymfonycommunity/symfony-mocker-container": "^1.0",
         "sylius-labs/coding-standard": "^4.0",
+        "sylius/test-application": "^1.14.0@alpha",
         "symfony/browser-kit": "^5.4 || ^6.4",
         "symfony/debug-bundle": "^5.4 || ^6.4",
         "symfony/dotenv": "^5.4 || ^6.4",
@@ -52,13 +53,15 @@
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "phpstan/extension-installer": true,
             "symfony/flex": true,
+            "symfony/runtime": false,
             "symfony/thanks": true
         }
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.10-dev"
-        }
+            "dev-master": "2.2-dev"
+        },
+        "public-dir": "vendor/sylius/test-application/public"
     },
     "autoload": {
         "psr-4": {
@@ -67,17 +70,11 @@
         }
     },
     "autoload-dev": {
-        "classmap": ["tests/Application/Kernel.php"]
-    },
-    "scripts": {
-        "post-install-cmd": [
-            "php bin/create_node_symlink.php"
-        ],
-        "post-update-cmd": [
-            "php bin/create_node_symlink.php"
-        ],
-        "post-create-project-cmd": [
-            "php bin/create_node_symlink.php"
-        ]
+        "psr-4": {
+            "Tests\\BitBag\\SyliusBannerPlugin\\": [
+                "tests/TestApplication/src",
+                "tests/Behat"
+            ]
+        }
     }
 }

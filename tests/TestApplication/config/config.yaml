@@ -1,0 +1,17 @@
+imports:
+    - { resource: "@BitBagSyliusBannerPlugin/Resources/config/config.yaml" }
+    - { resource: "services_test.php" }
+
+twig:
+    paths:
+        '%kernel.project_dir%/../../../tests/TestApplication/templates': ~
+#    default_path: '%kernel.project_dir%/../../../tests/TestApplication/templates'
+
+
+sylius_ui:
+    events:
+        sylius.shop.homepage:
+            blocks:
+                banner:
+                    template: "shop/homepage/_banner.html.twig"
+                    priority: 60

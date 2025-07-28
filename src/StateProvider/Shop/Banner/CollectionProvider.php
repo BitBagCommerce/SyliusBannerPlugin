@@ -21,7 +21,7 @@ use Sylius\Bundle\ApiBundle\SectionResolver\ShopApiSection;
 use Sylius\Bundle\CoreBundle\SectionResolver\SectionProviderInterface;
 use Webmozart\Assert\Assert;
 
-/** @implements ProviderInterface<object> */
+/** @implements ProviderInterface<BannerInterface> */
 final class CollectionProvider implements ProviderInterface
 {
     public function __construct(
@@ -33,7 +33,7 @@ final class CollectionProvider implements ProviderInterface
 
     public function provide(Operation $operation, array $uriVariables = [], array $context = []): object|array|null
     {
-        Assert::true(is_a($operation->getClass(), BannerInterface::class, true));
+        Assert::true(is_a((string) $operation->getClass(), BannerInterface::class, true));
         Assert::isInstanceOf($operation, GetCollection::class);
         Assert::isInstanceOf($this->sectionProvider->getSection(), ShopApiSection::class);
 

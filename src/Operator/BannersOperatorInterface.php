@@ -12,9 +12,11 @@ declare(strict_types=1);
 namespace BitBag\SyliusBannerPlugin\Operator;
 
 use BitBag\SyliusBannerPlugin\Entity\AdInterface;
+use BitBag\SyliusBannerPlugin\Entity\BannerInterface;
 
 interface BannersOperatorInterface
 {
+    /** @return array<BannerInterface>|null */
     public function operate(
         AdInterface $ad,
         string $sectionCode,

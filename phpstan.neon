@@ -1,15 +1,11 @@
 parameters:
     reportUnmatchedIgnoredErrors: false
-    checkMissingIterableValueType: false
-    checkGenericClassInNonGenericObjectType: false
 
     excludePaths:
         # Makes PHPStan crash
         - 'src/DependencyInjection/Configuration.php'
 
         # Test dependencies
-        - 'tests/Application/app/**.php'
-        - 'tests/Application/src/**.php'
         - 'tests/TestApplication/src/**.php'
 
     ignoreErrors:

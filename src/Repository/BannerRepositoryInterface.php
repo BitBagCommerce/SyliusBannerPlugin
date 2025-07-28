@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace BitBag\SyliusBannerPlugin\Repository;
 
+use BitBag\SyliusBannerPlugin\Entity\BannerInterface;
 use Doctrine\ORM\QueryBuilder;
 use Sylius\Component\Resource\Repository\RepositoryInterface;
 
@@ -18,5 +19,6 @@ interface BannerRepositoryInterface extends RepositoryInterface
 {
     public function createBuilder(): QueryBuilder;
 
+    /** @return array<BannerInterface> */
     public function findAdBannersByLocaleAndSection(string $sectionCode, string $localeCode): array;
 }

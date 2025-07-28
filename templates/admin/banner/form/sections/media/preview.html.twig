@@ -1,0 +1,7 @@
+{% set form = hookable_metadata.context.form %}
+
+{% if form.vars.value.path|default(null) is not null %}
+    <div class="mb-3">
+        <img class="img-thumbnail" src="{{ form.vars.value.path|imagine_filter('sylius_small') }}" alt="{{ form.vars.value.alt }}" />
+    </div>
+{% endif %}

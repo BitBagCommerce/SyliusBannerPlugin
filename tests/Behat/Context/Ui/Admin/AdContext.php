@@ -59,7 +59,7 @@ final class AdContext implements Context
      */
     public function iShouldSeeErrorAboutNotUniqueCode()
     {
-        $this->adPage->findFormError(NotificationType::failure());
+        $this->adPage->findFormError(NotificationType::error());
         $this->adPage->findValidationError('Ad code must be unique');
     }
 
@@ -68,7 +68,7 @@ final class AdContext implements Context
      */
     public function iShouldSeeErrorAboutWrongDate()
     {
-        $this->adPage->findFormError(NotificationType::failure());
+        $this->adPage->findFormError(NotificationType::error());
         $this->adPage->findValidationError('End date must be bigger than start date');
     }
 

@@ -22,7 +22,7 @@ final class Banner extends Constraint
         return 'bitbag_sylius_banner_plugin_validator_banner_validator';
     }
 
-    public function getTargets(): string
+    public function getTargets(): string|array
     {
         return self::CLASS_CONSTRAINT;
     }

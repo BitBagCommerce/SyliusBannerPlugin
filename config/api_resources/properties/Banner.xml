@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+
+ This file has been created by developers from BitBag.
+ Feel free to contact us once you face any issues or want to start
+ You can find more information about us on https://bitbag.io and write us
+ an email on hello@bitbag.io.
+
+-->
+
+<properties xmlns="https://api-platform.com/schema/metadata/properties-3.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="https://api-platform.com/schema/metadata/properties-3.0 https://api-platform.com/schema/metadata/properties-3.0.xsd"
+>
+    <property resource="%bitbag_sylius_banner_plugin.model.banner.class%" name="id" identifier="true" writable="false"/>
+    <property resource="%bitbag_sylius_banner_plugin.model.banner.class%" name="path" writable="false"/>
+    <property resource="%bitbag_sylius_banner_plugin.model.banner.class%" name="alt" writable="false"/>
+    <property resource="%bitbag_sylius_banner_plugin.model.banner.class%" name="fileName" writable="false"/>
+    <property resource="%bitbag_sylius_banner_plugin.model.banner.class%" name="link" writable="false"/>
+    <property resource="%bitbag_sylius_banner_plugin.model.banner.class%" name="priority" writable="false"/>
+    <property resource="%bitbag_sylius_banner_plugin.model.banner.class%" name="locale" writable="false"/>
+    <property resource="%bitbag_sylius_banner_plugin.model.banner.class%" name="section" writable="false"/>
+    <property resource="%bitbag_sylius_banner_plugin.model.banner.class%" name="ads" writable="false"/>
+</properties>

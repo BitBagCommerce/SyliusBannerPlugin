@@ -12,15 +12,22 @@ declare(strict_types=1);
 namespace BitBag\SyliusBannerPlugin\Provider;
 
 use BitBag\SyliusBannerPlugin\Entity\AdInterface;
+use BitBag\SyliusBannerPlugin\Entity\BannerInterface;
 
 interface BannersProviderInterface
 {
+    /**
+     * @param array<AdInterface> $ads
+     *
+     * @return array<BannerInterface>|null
+     */
     public function getAdsBanners(
         array $ads,
         string $sectionCode,
         string $localeCode,
     ): ?array;
 
+    /** @return array<BannerInterface>|null */
     public function getAdBanners(
         AdInterface $ad,
         string $sectionCode,

@@ -1,0 +1,11 @@
+imports:
+    - { resource: "@BitBagSyliusBannerPlugin/Resources/config/config.yaml" }
+    - { resource: "services_test.php" }
+
+sylius_ui:
+    events:
+        sylius.shop.homepage:
+            blocks:
+                banner:
+                    template: "shop/homepage/banner.html.twig"
+                    priority: 60

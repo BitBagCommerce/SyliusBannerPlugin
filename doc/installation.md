@@ -69,6 +69,25 @@ bin/console doctrine:migrations:migrate
 ```
 **Note:** If you are running it on production, add the `-e prod` flag to this command.
 
+### Install assets:
+
+Add the following line to your `assets/admin/entrypoint.js` file:
+
+```
+import '../../vendor/bitbag/banner-plugin/assets/admin/entrypoint';
+```
+
+And the following line to your `assets/shop/entrypoint.js` file:
+
+```
+import '../../vendor/bitbag/banner-plugin/assets/shop/entrypoint';
+```
+
+Then, run the following commands to install assets:
+```bash
+Run yarn encore dev or yarn encore production
+```
+
 ### Clear application cache by using command:
 ```bash
 bin/console cache:clear

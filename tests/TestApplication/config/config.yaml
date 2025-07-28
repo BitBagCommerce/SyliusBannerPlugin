@@ -1,0 +1,8 @@
+imports:
+    - { resource: "@BitBagSyliusBannerPlugin/config/config.yaml" }
+    - { resource: "sylius_twig_hooks.yaml" }
+    - { resource: "config_test.php" }
+
+twig:
+    paths:
+        '%kernel.project_dir%/../../../tests/TestApplication/templates': ~

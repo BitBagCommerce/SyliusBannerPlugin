@@ -1,0 +1,64 @@
+sylius_grid:
+    grids:
+        bitbag_sylius_banner_plugin_ad:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: "%bitbag_sylius_banner_plugin.model.ad.class%"
+            sorting:
+                endAt: desc
+            fields:
+                name:
+                    type: string
+                    label: sylius.ui.name
+                    sortable: ~
+                startAt:
+                    type: datetime
+                    label: sylius.ui.starts_at
+                    sortable: ~
+                endAt:
+                    type: datetime
+                    label: sylius.ui.ends_at
+                    sortable: ~
+                priority:
+                    type: string
+                    label: sylius.ui.priority
+                    sortable: ~
+                enabled:
+                    type: twig
+                    label: sylius.ui.enabled
+                    sortable: ~
+                    options:
+                        template: "@SyliusUi/grid/field/enabled.html.twig"
+            actions:
+                main:
+                    create:
+                        type: create
+                item:
+                    update:
+                        type: update
+                    delete:
+                        type: delete
+            filters:
+                enabled:
+                    type: boolean
+                    label: sylius.ui.enabled
+                    options:
+                        field: enabled
+                search:
+                    type: string
+                    label: sylius.ui.search
+                    options:
+                        fields: [ priority, name ]
+                start_date:
+                    type: date
+                    label: sylius.ui.starts_at
+                    options:
+                        field: startAt
+                        inclusive_to: true
+                end_date:
+                    type: date
+                    label: sylius.ui.ends_at
+                    options:
+                        field: endAt
+                        inclusive_to: true

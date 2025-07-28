@@ -29,10 +29,8 @@ class BannerRepository extends EntityRepository implements BannerRepositoryInter
             ->innerJoin('b.section', 's')
             ->andWhere('s.code = :sectionCode')
             ->andWhere('l.code = :localeCode')
-            ->setParameters([
-                'sectionCode' => $sectionCode,
-                'localeCode' => $localeCode,
-            ])
+            ->setParameter('sectionCode', $sectionCode)
+            ->setParameter('localeCode', $localeCode)
             ->addOrderBy('b.priority', 'DESC')
             ->getQuery()
             ->getResult();

@@ -50,7 +50,7 @@ final class SectionContext implements Context
      */
     public function iShouldSeeErrorAboutNotUniqueCode()
     {
-        $this->sectionPage->findFormError(NotificationType::failure());
+        $this->sectionPage->findFormError(NotificationType::error());
         $this->sectionPage->findValidationError('Section code must be unique');
     }
 }

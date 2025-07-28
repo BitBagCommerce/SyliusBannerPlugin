@@ -1,0 +1,18 @@
+imports:
+    - { resource: "services.xml" }
+    - { resource: "resources.yaml" }
+    - { resource: "grids/*.yaml" }
+    - { resource: "twig_hooks/**/*.yaml" }
+
+parameters:
+    bitbag_sylius_banner_plugin.uploader.filesystem: bitbag_sylius_banner_plugin_banner
+    bitbag_sylius_banner_plugin.images_dir: "%sylius_core.images_dir%"
+
+
+flysystem:
+    storages:
+        bitbag_sylius_banner_plugin.image.storage:
+            adapter: 'local'
+            options:
+                directory: '%bitbag_sylius_banner_plugin.images_dir%'
+            directory_visibility: 'public'

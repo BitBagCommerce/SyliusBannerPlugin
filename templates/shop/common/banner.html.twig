@@ -1,0 +1,37 @@
+{% set banners = getActiveAdsBanners(
+    hookable_metadata.configuration.section_code|default(),
+    hookable_metadata.configuration.locale_code|default(sylius.localeCode),
+) %}
+
+{% if banners and banners|length %}
+    <div class="container">
+        <div class="swiper banners-carousel mb-3">
+            <div class="swiper-wrapper">
+                {% for banner in banners %}
+                    <div class="swiper-slide">
+                        <div>
+                            {% if banner.link %}
+                                <a href="{{ path(
+                                    'bitbag_sylius_banner_plugin_count_banner_clicks',
+                                    {id: banner.id}) }}" class="banners-item"
+                                >
+                                    <img src="{{ banner.path|imagine_filter(hookable_metadata.configuration.imagine_filter|default('sylius_original')) }}" alt="{{ banner.alt }}"/>
+                                </a>
+                            {% else %}
+                                <div class="banners-item">
+                                    <img src="{{ banner.path|imagine_filter(hookable_metadata.configuration.imagine_filter|default('sylius_original')) }}" alt="{{ banner.alt }}"/>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="btn btn-primary swiper-button-prev position-absolute top-50 start-0 z-1 translate-x-middle ms-2 opacity-75">
+                {{ ux_icon('tabler:chevron-left') }}
+            </div>
+            <div class="btn btn-primary swiper-button-next position-absolute top-50 end-0 z-1 translate-x-middle me-2 opacity-75">
+                {{ ux_icon('tabler:chevron-right') }}
+            </div>
+        </div>
+    </div>
+{% endif %}

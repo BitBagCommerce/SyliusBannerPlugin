@@ -15,23 +15,21 @@ use BitBag\SyliusBannerPlugin\Entity\BannerInterface;
 use BitBag\SyliusBannerPlugin\Generator\BannerPathGeneratorInterface;
 use BitBag\SyliusBannerPlugin\Uploader\BannerUploader;
 use BitBag\SyliusBannerPlugin\Uploader\BannerUploaderInterface;
-use Gaufrette\Filesystem;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
-use Sylius\Component\Channel\Context\ChannelContextInterface;
+use Sylius\Component\Core\Filesystem\Adapter\FilesystemAdapterInterface;
 use Symfony\Component\HttpFoundation\File\File;
 
 final class BannerUploaderSpec extends ObjectBehavior
 {
     public function let(
-        Filesystem $filesystem,
+        FilesystemAdapterInterface $filesystem,
         BannerInterface $banner,
         BannerPathGeneratorInterface $bannerPathGenerator
     ): void {
         $file = new File(__FILE__);
         $banner->getFile()->willReturn($file);
 
-        $this->beConstructedWith($filesystem,$bannerPathGenerator);
+        $this->beConstructedWith($filesystem, $bannerPathGenerator);
     }
 
     public function it_is_initializable(): void
@@ -40,12 +38,8 @@ final class BannerUploaderSpec extends ObjectBehavior
         $this->shouldImplement(BannerUploaderInterface::class);
     }
 
-    public function it_removes_an_image_if_exists(Filesystem $filesystem): void
+    public function it_removes_an_image_if_exists(FilesystemAdapterInterface $filesystem): void
     {
-        $filesystem->has('path/to/img')->willReturn(true);
-        $filesystem->delete('path/to/img')->willReturn(true);
-
-        $filesystem->has('path/to/img')->shouldBeCalled();
         $filesystem->delete('path/to/img')->shouldBeCalled();
 
         $this->remove('path/to/img');

@@ -22,7 +22,7 @@ final class Ad extends Constraint
         return 'bitbag_sylius_banner_plugin_validator_ad_validator';
     }
 
-    public function getTargets(): string
+    public function getTargets(): string|array
     {
         return self::CLASS_CONSTRAINT;
     }

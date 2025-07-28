@@ -22,31 +22,52 @@ final class AdminMenuListener
         $newSubmenu = $menu
             ->addChild('bitbag_sylius_banner_plugin')
             ->setLabel('bitbag_sylius_banner_plugin.ui.banners')
-            ->setLabelAttribute('icon', 'images outline')
+            ->setLabelAttribute('icon', 'tabler:photo')
         ;
 
         $newSubmenu
             ->addChild('ads', [
                 'route' => 'bitbag_sylius_banner_plugin_admin_ad_index',
+                'extras' => [
+                    'routes' => [
+                        ['route' => 'bitbag_sylius_banner_plugin_admin_ad_create'],
+                        ['route' => 'bitbag_sylius_banner_plugin_admin_ad_update'],
+                        ['route' => 'bitbag_sylius_banner_plugin_admin_ad_show'],
+                    ],
+                ],
             ])
             ->setLabel('bitbag_sylius_banner_plugin.ui.ad')
-            ->setLabelAttribute('icon', 'adversal')
+            ->setLabelAttribute('icon', 'tabler:ad')
         ;
 
         $newSubmenu
             ->addChild('banners', [
                 'route' => 'bitbag_sylius_banner_plugin_admin_banner_index',
+                'extras' => [
+                    'routes' => [
+                        ['route' => 'bitbag_sylius_banner_plugin_admin_banner_create'],
+                        ['route' => 'bitbag_sylius_banner_plugin_admin_banner_update'],
+                        ['route' => 'bitbag_sylius_banner_plugin_admin_banner_show'],
+                    ],
+                ],
             ])
             ->setLabel('bitbag_sylius_banner_plugin.ui.banner')
-            ->setLabelAttribute('icon', 'file image outline')
+            ->setLabelAttribute('icon', 'tabler:photo')
         ;
 
         $newSubmenu
             ->addChild('section', [
                 'route' => 'bitbag_sylius_banner_plugin_admin_section_index',
+                'extras' => [
+                    'routes' => [
+                        ['route' => 'bitbag_sylius_banner_plugin_admin_section_create'],
+                        ['route' => 'bitbag_sylius_banner_plugin_admin_section_update'],
+                        ['route' => 'bitbag_sylius_banner_plugin_admin_section_show'],
+                    ],
+                ],
             ])
             ->setLabel('bitbag_sylius_banner_plugin.ui.section')
-            ->setLabelAttribute('icon', 'external alternate')
+            ->setLabelAttribute('icon', 'tabler:layout-grid')
         ;
     }
 }

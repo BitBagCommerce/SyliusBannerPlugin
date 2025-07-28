@@ -1,0 +1,8 @@
+sylius_twig_hooks:
+    hooks:
+        sylius_shop.homepage.index:
+            banner:
+                template: "@BitBagSyliusBannerPlugin/shop/common/banner.html.twig"
+                priority: 300
+                configuration:
+                    section_code: 'TEST'

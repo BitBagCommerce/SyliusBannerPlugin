@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace BitBag\SyliusBannerPlugin\Twig\Extension;
 
+use BitBag\SyliusBannerPlugin\Entity\BannerInterface;
 use BitBag\SyliusBannerPlugin\Provider\BannersProviderInterface;
 use BitBag\SyliusBannerPlugin\Repository\AdRepositoryInterface;
 use Twig\Extension\AbstractExtension;
@@ -36,6 +37,7 @@ final class BannerExtension extends AbstractExtension
         ];
     }
 
+    /** @return array<BannerInterface>|null */
     public function getActiveAdsBannersBySectionAndLocale(
         string $sectionCode,
         string $localeCode,
@@ -49,6 +51,7 @@ final class BannerExtension extends AbstractExtension
         return $this->bannersProvider->getAdsBanners($ads, $sectionCode, $localeCode);
     }
 
+    /** @return array<BannerInterface>|null */
     public function getActiveAdBannersByCodeSectionAndLocale(
         string $adCode,
         string $sectionCode,

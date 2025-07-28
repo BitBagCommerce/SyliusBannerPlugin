@@ -1,0 +1,44 @@
+sylius_twig_hooks:
+    hooks:
+        'sylius_admin.banner.update.content.form.sections':
+            general:
+                template: '@BitBagSyliusBannerPlugin/admin/banner/form/sections/general.html.twig'
+                priority: 100
+            media:
+                template: '@BitBagSyliusBannerPlugin/admin/banner/form/sections/media.html.twig'
+                priority: 0
+
+        'sylius_admin.banner.update.content.form.sections.general':
+            default:
+                enabled: false
+            locale:
+                template: '@BitBagSyliusBannerPlugin/admin/banner/form/sections/general/locale.html.twig'
+                priority: 300
+            section:
+                template: '@BitBagSyliusBannerPlugin/admin/banner/form/sections/general/section.html.twig'
+                priority: 200
+            priority:
+                template: '@BitBagSyliusBannerPlugin/admin/banner/form/sections/general/priority.html.twig'
+                priority: 100
+            ads:
+                template: '@BitBagSyliusBannerPlugin/admin/banner/form/sections/general/ads.html.twig'
+                priority: 0
+
+        'sylius_admin.banner.update.content.form.sections.media':
+            preview:
+                template: '@BitBagSyliusBannerPlugin/admin/banner/form/sections/media/preview.html.twig'
+                priority: 200
+            upload:
+                template: '@BitBagSyliusBannerPlugin/admin/banner/form/sections/media/upload.html.twig'
+                priority: 100
+            fields:
+                template: '@BitBagSyliusBannerPlugin/admin/banner/form/sections/media/fields.html.twig'
+                priority: 0
+
+        'sylius_admin.banner.update.content.form.sections.media.fields':
+            link:
+                template: '@BitBagSyliusBannerPlugin/admin/banner/form/sections/media/fields/link.html.twig'
+                priority: 100
+            alt:
+                template: '@BitBagSyliusBannerPlugin/admin/banner/form/sections/media/fields/alt.html.twig'
+                priority: 0

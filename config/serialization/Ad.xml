@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+
+<serializer xmlns="http://symfony.com/schema/dic/serializer-mapping"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://symfony.com/schema/dic/serializer-mapping https://symfony.com/schema/dic/serializer-mapping/serializer-mapping-1.0.xsd"
+>
+    <class name="BitBag\SyliusBannerPlugin\Entity\Ad">
+        <attribute name="id">
+            <group>bitbag_sylius_banner:shop:ad:show</group>
+        </attribute>
+        <attribute name="name">
+            <group>bitbag_sylius_banner:shop:ad:show</group>
+        </attribute>
+        <attribute name="code">
+            <group>bitbag_sylius_banner:shop:ad:show</group>
+        </attribute>
+        <attribute name="enabled">
+            <group>bitbag_sylius_banner:shop:ad:show</group>
+        </attribute>
+        <attribute name="startAt">
+            <group>bitbag_sylius_banner:shop:ad:show</group>
+        </attribute>
+        <attribute name="endAt">
+            <group>bitbag_sylius_banner:shop:ad:show</group>
+        </attribute>
+        <attribute name="priority">
+            <group>bitbag_sylius_banner:shop:ad:show</group>
+        </attribute>
+    </class>
+</serializer>

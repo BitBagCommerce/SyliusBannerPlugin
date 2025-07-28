@@ -1,7 +1,0 @@
-sylius_ui:
-    events:
-        sylius.shop.homepage:
-            blocks:
-                banner:
-                    template: "@SyliusShop/Homepage/_banner.html.twig"
-                    priority: 60

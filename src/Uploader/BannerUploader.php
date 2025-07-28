@@ -13,19 +13,16 @@ namespace BitBag\SyliusBannerPlugin\Uploader;
 
 use BitBag\SyliusBannerPlugin\Entity\BannerInterface;
 use BitBag\SyliusBannerPlugin\Generator\BannerPathGeneratorInterface;
-use Gaufrette\Filesystem;
+use Sylius\Component\Core\Filesystem\Adapter\FilesystemAdapterInterface;
+use Sylius\Component\Core\Filesystem\Exception\FileNotFoundException;
 use Webmozart\Assert\Assert;
 
 final class BannerUploader implements BannerUploaderInterface
 {
-    private Filesystem $filesystem;
-
-    private BannerPathGeneratorInterface $bannerPathGenerator;
-
-    public function __construct(Filesystem $filesystem, BannerPathGeneratorInterface $bannerPathGenerator)
-    {
-        $this->filesystem = $filesystem;
-        $this->bannerPathGenerator = $bannerPathGenerator;
+    public function __construct(
+        private readonly FilesystemAdapterInterface $filesystem,
+        private readonly BannerPathGeneratorInterface $bannerPathGenerator,
+    ) {
     }
 
     public function upload(BannerInterface $banner): void
@@ -59,11 +56,13 @@ final class BannerUploader implements BannerUploaderInterface
 
     public function remove(string $path): bool
     {
-        if ($this->filesystem->has($path)) {
-            return $this->filesystem->delete($path);
+        try {
+            $this->filesystem->delete($path);
+        } catch (FileNotFoundException) {
+            return false;
         }
 
-        return false;
+        return true;
     }
 
     private function has(string $path): bool

@@ -56,14 +56,14 @@ final class SectionPage extends SymfonyPage
 
     public function findFormError(NotificationType $type)
     {
-        $errorMessage = $this->getDocument()->find('css', '.ui.icon.negative.message')->getText();
+        $errorMessage = $this->getDocument()->find('css', '[data-test-form-error-alert]')->getText();
 
         Assert::contains($errorMessage, 'This form contains errors');
     }
 
     public function findValidationError(string $string)
     {
-        $this->getDocument()->find('css', 'form .sylius-validation-error')->getText($string);
+        $this->getDocument()->find('css', 'form .invalid-feedback')->getText($string);
     }
 
     protected function getDefinedElements(): array

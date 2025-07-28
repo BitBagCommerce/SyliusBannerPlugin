@@ -1,0 +1,12 @@
+{% set form = hookable_metadata.context.form %}
+
+<div class="mb-3">
+    <div class="d-none">
+        {{ form_widget(form.file) }}
+    </div>
+    <label for="{{ form.file.vars.id }}" class="btn btn-primary">
+        <i class="tabler:upload"></i>
+        {{ 'sylius.ui.choose_file'|trans }}
+    </label>
+    {{ form_errors(form.file) }}
+</div>

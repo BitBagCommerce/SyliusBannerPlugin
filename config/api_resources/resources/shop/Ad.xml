@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+
+ This file has been created by developers from BitBag.
+ Feel free to contact us once you face any issues or want to start
+ You can find more information about us on https://bitbag.io and write us
+ an email on hello@bitbag.io.
+
+-->
+
+<resources
+    xmlns="https://api-platform.com/schema/metadata/resources-3.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://api-platform.com/schema/metadata/resources-3.0 https://api-platform.com/schema/metadata/resources-3.0.xsd"
+>
+    <resource class="%bitbag_sylius_banner_plugin.model.ad.class%">
+        <operations>
+            <operation name="bitbag_sylius_banner_api_shop_ad_get" class="ApiPlatform\Metadata\Get" uriTemplate="/shop/ads/{id}">
+                <normalizationContext>
+                    <values>
+                        <value name="groups">
+                            <values>
+                                <value>bitbag_sylius_banner:shop:ad:show</value>
+                            </values>
+                        </value>
+                    </values>
+                </normalizationContext>
+            </operation>
+        </operations>
+    </resource>
+</resources>

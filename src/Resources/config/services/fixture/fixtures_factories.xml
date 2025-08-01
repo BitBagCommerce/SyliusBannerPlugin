@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="bitbag.sylius_banner_plugin.fixture.factory.banner_section_fixture_factory"
+                 class="BitBag\SyliusBannerPlugin\Fixture\Factory\BannerSectionFixtureFactory"
+                 public="true"
+        >
+            <argument type="service" id="bitbag_sylius_banner_plugin.factory.section" />
+            <argument type="service" id="bitbag_sylius_banner_plugin.factory.banner" />
+            <argument type="service" id="bitbag_sylius_banner_plugin.factory.ad" />
+            <argument type="service" id="bitbag_sylius_banner_plugin.repository.section" />
+            <argument type="service" id="bitbag_sylius_banner_plugin.repository.banner" />
+            <argument type="service" id="bitbag_sylius_banner_plugin.repository.ad" />
+            <argument type="service" id="sylius.repository.locale" />
+        </service>
+    </services>
+</container>

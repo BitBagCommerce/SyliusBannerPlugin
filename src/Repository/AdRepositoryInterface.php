@@ -12,8 +12,9 @@ declare(strict_types=1);
 namespace BitBag\SyliusBannerPlugin\Repository;
 
 use BitBag\SyliusBannerPlugin\Entity\AdInterface;
+use Sylius\Component\Resource\Repository\RepositoryInterface;
 
-interface AdRepositoryInterface
+interface AdRepositoryInterface extends RepositoryInterface
 {
     public function findAllActiveAds(): array;
 
